@@ -1,0 +1,191 @@
+$dark-blue: rgb(45, 66, 83)
+%font-style
+    color: $dark-blue
+    text-align: center
+    font-size: 30px
+    font-weight: bold
+    font-family: sans-serif
+    line-height: 1.7
+%secondary-title
+    @extend %font-style
+    font-weight: initial
+
+%flex
+    display: flex
+    flex-wrap: wrap
+%button-style
+    background-color: #28beb4
+    color: #ffffff
+    border-color: #31d7cc
+    outline-color: transparent
+
+    text-decoration: none
+    font-size: 16px
+
+    padding: 12px 25px
+
+    border-width: 2px
+    border-radius: 27px
+    &:hover
+        background-color: #31d7cc
+*
+    text-transform: capitalize
+    scroll-behavior: smooth
+body
+    margin: 0
+nav
+    z-index: 999
+    background: #08293d
+    color: white
+
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 90px
+    ul
+        display: flex
+        align-items: center
+        list-style-type: none
+        li
+            &:first-child
+                padding: 20px
+                flex: 0.6
+                a
+                    display: flex
+                    align-items: center
+                    span:nth-child(2)
+                        margin-left: 5px
+                        font-size: 24px
+
+            &:not(:first-child)
+                padding-left: 1rem
+            &:hover
+                a
+                    color: rgba(100, 196, 189, 1)
+
+    a
+        text-decoration: none
+        color: white
+main
+    // margin-top: 90px
+section
+    padding-top: 90px
+    header
+        @extend %font-style
+        padding: 26px
+#HOME
+    img
+        width: 100%
+        height: 100%
+    .home-container
+        position: absolute
+        top: 50%
+        left: 28%
+        transform: translate(-50%, -50%)
+        color: white
+        animation: 1s ease-out 0s 1 slideInLeft
+        p
+            font-size: 30px
+            font-weight: bold
+            font-family: sans-serif
+        button
+            @extend %button-style
+
+            &:hover
+                background-color: #31d7cc
+#CATEGORIES
+
+    .cat-container
+        @extend %flex
+        justify-content: space-evenly
+        row-gap: 30px
+
+        .cat
+            // animation: 1s ease-out 0s 1 slideInup
+
+            img
+                width: 409.656px
+                height: 240.203px
+                border-radius: 14px
+            p
+                @extend %secondary-title
+                padding-top: 20px
+                margin: 0
+            &:hover
+                p
+                    color: rgba(100, 196, 189, 1)
+.serv-container
+    @extend %flex
+    justify-content: space-around
+    .serv-card
+        width: 22%
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        h2,p
+            @extend %secondary-title
+        p
+            font-size: 1rem
+            color: lighten($dark-blue,10% )
+        img
+            border-radius: 14px
+            padding: 10px
+        button
+            @extend %button-style
+            width: 50%
+            align-self: center
+            margin-bottom: 10px
+        &:hover
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+.about-container
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    & > *
+        width: 45%
+    p
+        @extend %secondary-title
+        font-size: 1rem
+        color: lighten($dark-blue,10% )
+.infos-container
+    @extend %flex
+    justify-content: space-around
+    & > *
+        width: 20%
+        border-right: 1px solid hsla(0,0%,80%,.4)
+    img
+        width: 42px
+        height: 42px
+
+form
+    width: 50%
+
+    margin-top: 30px
+    margin-left: auto
+    margin-right: auto
+
+    display: flex
+    flex-direction: column
+    & > *
+        padding: 10px
+        margin: 10px
+        border: 1px solid gray
+
+@keyframes slideInLeft
+    0%
+        transform: translate(0%, 0%)
+        opacity: 0
+
+    100%
+        opacity: 1
+        transform: translate(-50%, -50%)
+
+// @keyframes slideInup
+//     0%
+//         transform: translate(2, 1)
+//         opacity: 0
+
+//     100%
+//         opacity: 1
+//         transform: translate(0, 0)
