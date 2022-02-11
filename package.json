@@ -1,0 +1,28 @@
+{
+  "name": "smarthome",
+  "version": "1.0.0",
+  "description": "smart home landing page",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --watch sass/main.sass  dist/css/style.css",
+    "start": "npm-run-all  watch:sass",
+    "compile:sass": "sass --no-source-map sass/main.sass  dist/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer  -b 'last 10 versions' dist/css/style.comp.css -o dist/css/style.prefix.css",
+    "compress:css": "sass --style compressed dist/css/style.prefix.css dist/css/style.css ",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css "
+  },
+  "author": "abdelghanyMh",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.4"
+  },
+  "keywords": [
+    "sass",
+    "html",
+    "responsive-web-design"
+  ],
+  "license": "ISC"
+}

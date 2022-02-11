@@ -1,0 +1,38 @@
+@use '../abstracts'
+.nav
+    z-index: abstracts.$zindex-navbar
+    background: abstracts.$dark-blue-1
+    color: abstracts.$white
+
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: min-content
+    
+    .logo
+        padding: 2rem
+        flex-grow: 0.6
+        a
+            display: flex
+            align-items: center
+            gap: 0.6rem
+            span
+                font-size: 2.4rem
+    &__list
+        display: flex
+        align-items: center
+        gap: 1.5rem
+
+        list-style-type: none
+
+        margin: 0
+
+    &__item
+        font-size: 2rem
+
+    &__link:link,&__link:visited
+        text-decoration: none
+        color: white
+        &:hover
+            color: rgba(100, 196, 189, 1)

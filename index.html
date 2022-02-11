@@ -8,24 +8,24 @@
     <title>Smart Home</title>
     <!-- set up google icon fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./resources/style.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li class=".logo"><a href="" onclick="location.reload();"><span class="material-icons">&#xe88a;</span>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="logo"><a class="nav__link" href="" onclick="location.reload();"><span class="material-icons">&#xe88a;</span>
                     <span> Smart Home</span></a></li>
-            <li><a href="#HOME"> HOME</a></li>
-            <li><a href="#CATEGORIES"> CATEGORIES</a></li>
-            <li><a href="#SERVICES"> SERVICES</a></li>
-            <li><a href="#ABOUT-US"> À propos nous</a></li>
-            <li><a href="#CONTACT-US"> contactez-nous</a></li>
+            <li class="nav__item"><a class="nav__link" href="#HOME"> Home</a></li>
+            <li class="nav__item" ><a class="nav__link" href="#CATEGORIES"> Categories</a></li>
+            <li class="nav__item" ><a class="nav__link" href="#SERVICES"> Services</a></li>
+            <li class="nav__item" ><a class="nav__link" href="#ABOUT-US"> About Us</a></li>
+            <li class="nav__item" ><a class="nav__link" href="#CONTACT-US">Contact Us</a></li>
         </ul>
     </nav>
     <main>
         <section id="HOME">
-            <img src="./resources/img/headerimg.webp" alt="">
+            <img src="./dist/img/headerimg.webp" alt="">
             <div class="home-container">
                 <p class="intro">Système de domotique leader Fournisseur</p>
                 <button>Demandez Nous</button>
@@ -35,35 +35,35 @@
             <header>CATEGORIES</header>
             <div class="cat-container">
                 <div class="cat">
-                    <img src="./resources/img/C8323C4BAAA86FD005F32F5F25_1613450878085.jpg" alt="Smart Thermostat">
+                    <img src="./dist/img/C8323C4BAAA86FD005F32F5F25_1613450878085.jpg" alt="Smart Thermostat">
                     <p>Smart Thermostat</p>
                 </div>
                 <div class="cat">
-                    <img src="./resources/img/06D447B356272562EC95D86D7E_1613451499746.jpg" alt="Chauffe-eau">
+                    <img src="./dist/img/06D447B356272562EC95D86D7E_1613451499746.jpg" alt="Chauffe-eau">
                     <p>Chauffe-eau</p>
                 </div>
                 <div class="cat">
-                    <img src="./resources/img/AC-card.jpg" alt="Climatiseur intelligent">
+                    <img src="./dist/img/AC-card.jpg" alt="Climatiseur intelligent">
                     <p>Climatiseur intelligent</p>
                 </div>
                 <div class="cat">
-                    <img src="./resources/img/movement-detector.jpg" alt="movement detector">
+                    <img src="./dist/img/movement-detector.jpg" alt="movement detector">
                     <p>détecteur de mouvement</p>
                 </div>
                 <div class="cat">
-                    <img src="./resources/img/smart-plug.webp" alt="Prise intelligente.">
+                    <img src="./dist/img/smart-plug.webp" alt="Prise intelligente.">
                     <p>Prise intelligente</p>
                 </div>
                 <div class="cat">
-                    <img src="./resources/img/2BED2F06C3130DF7A1E41AFABB_1613451029796.jpg" alt="Vidéo Surveillance">
+                    <img src="./dist/img/2BED2F06C3130DF7A1E41AFABB_1613451029796.jpg" alt="Vidéo Surveillance">
                     <p>Vidéo Surveillance</p>
                 </div>
                 <div class="cat">
-                    <img src="./resources/img/electric-blinds_44531.webp" alt="volets intelligents">
+                    <img src="./dist/img/electric-blinds_44531.webp" alt="volets intelligents">
                     <p>volets intelligents</p>
                 </div>
                 <div class="cat">
-                    <img src="./resources/img/lockly-duo-smart-lock-lifestyle-2.jpg" alt="serrure intelligente">
+                    <img src="./dist/img/lockly-duo-smart-lock-lifestyle-2.jpg" alt="serrure intelligente">
                     <p>serrure intelligente</p>
                 </div>
             </div>
@@ -72,7 +72,7 @@
             <header>SERVICES</header>
             <div class="serv-container">
                 <div class="serv-card">
-                    <img src="./resources/img/84B3F9D8A4F7892136F5F17EEB_1521276763590.jpg" alt="">
+                    <img src="./dist/img/84B3F9D8A4F7892136F5F17EEB_1521276763590.jpg" alt="">
                     <h2>Réparation</h2>
                     <p>Nous avons une excellente équipe technique pour offrir un service de réparation de systèmes
                         domotiques à un tarif
@@ -80,7 +80,7 @@
                     <button>Demandez Nous</button>
                 </div>
                 <div class="serv-card">
-                    <img src="./resources/img/295781CAABBE0F7551E27D04DB_1521276778221.jpg" alt="">
+                    <img src="./dist/img/295781CAABBE0F7551E27D04DB_1521276778221.jpg" alt="">
                     <h2>Installation</h2>
                     <p>Ces systèmes peuvent être aussi simples ou aussi complexes. Nous avons une équipe d'experts pour
                         vous faciliter la tâche
@@ -88,7 +88,7 @@
                     <button>Demandez Nous</button>
                 </div>
                 <div class="serv-card">
-                    <img src="./resources/img/1B3FF60F529E79AB1F1A1E7DED_1521276824009.jpg" alt="Consultation">
+                    <img src="./dist/img/1B3FF60F529E79AB1F1A1E7DED_1521276824009.jpg" alt="Consultation">
                     <h2>Consultation</h2>
                     <p>Nous avons des consultants bien informés qui vous aideront à trouver des systèmes domotiques
                         compatibles et adaptés à
@@ -96,7 +96,7 @@
                     <button>Demandez Nous</button>
                 </div>
                 <div class="serv-card">
-                    <img src="./resources/img/7E0B90F04D076A9CF4A49CBD5F_1522400773126.jpg" alt="maintenance annuel">
+                    <img src="./dist/img/7E0B90F04D076A9CF4A49CBD5F_1522400773126.jpg" alt="maintenance annuel">
                     <h2 title="contrat d'entretien annuel">maintenance annuel</h2>
                     <p>Nous proposons également un programme de maintenance annuel qui vous aide à prévenir les pannes
                         du système à tout moment
@@ -124,7 +124,7 @@
                         Contactez-nous dès aujourd'hui !</p>
                 </div>
 
-                <img src="./resources/img/60117C85DBB9BEBBF7B5F4EE36_1613452260004.png" alt="">
+                <img src="./dist/img/60117C85DBB9BEBBF7B5F4EE36_1613452260004.png" alt="">
             </div>
         </section>
         <section id="CONTACT-US">
@@ -132,22 +132,22 @@
             <div class="contact-container">
                 <div class="infos-container">
                     <div class="contact-info">
-                        <img src="./resources/img/location.png" alt="location">
+                        <img src="./dist/img/location.png" alt="location">
                         <p>Notre adresse de bureau</p>
                         <p>Algérie,la lune</p>
                     </div>
                     <div class="contact-info">
-                        <img src="./resources/img/email.png" alt="Renseignements généraux">
+                        <img src="./dist/img/email.png" alt="Renseignements généraux">
                         <p>Renseignements généraux</p>
                         <p>8ef2933c90@emailnax.com</p>
                     </div>
                     <div class="contact-info">
-                        <img src="./resources/img/phone.png" alt="Appelez-nous">
+                        <img src="./dist/img/phone.png" alt="Appelez-nous">
                         <p>Appelez-nous</p>
                         <p>+213561902876</p>
                     </div>
                     <div class="contact-info">
-                        <img src="./resources/img/timing.png" alt="Nos horaires">
+                        <img src="./dist/img/timing.png" alt="Nos horaires">
                         <p>Nos horaires </p>
                         <p>Sam-Mer : 09h00 - 21h00</p>
                     </div>
