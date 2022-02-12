@@ -7,32 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Home</title>
     <!-- set up google icon fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" crossorigin>
+
+    <!-- google font family  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300&family=Changa:wght@300&display=swap"
+        rel="stylesheet" crossorigin>
+
     <link rel="stylesheet" href="./dist/css/style.css">
 </head>
 
 <body>
     <nav class="nav">
         <ul class="nav__list">
-            <li class="logo"><a class="nav__link" href="" onclick="location.reload();"><span class="material-icons">&#xe88a;</span>
+            <li class="logo"><a class="nav__link" href="" onclick="location.reload();"><span
+                        class="material-icons">&#xe88a;</span>
                     <span> Smart Home</span></a></li>
-            <li class="nav__item"><a class="nav__link" href="#HOME"> Home</a></li>
-            <li class="nav__item" ><a class="nav__link" href="#CATEGORIES"> Categories</a></li>
-            <li class="nav__item" ><a class="nav__link" href="#SERVICES"> Services</a></li>
-            <li class="nav__item" ><a class="nav__link" href="#ABOUT-US"> About Us</a></li>
-            <li class="nav__item" ><a class="nav__link" href="#CONTACT-US">Contact Us</a></li>
+            <li class="nav__item"><a class="nav__link" href="#header"> Home</a></li>
+            <li class="nav__item"><a class="nav__link" href="#ABOUT-US"> About Us</a></li>
+            <li class="nav__item"><a class="nav__link" href="#CATEGORIES"> Categories</a></li>
+            <li class="nav__item"><a class="nav__link" href="#SERVICES"> Services</a></li>
+            <li class="nav__item"><a class="nav__link" href="#CONTACT-US">Contact Us</a></li>
         </ul>
     </nav>
+    <header id="header" class="header">
+        <div class="header-container">
+            <h1 class="heading-primary">
+                <span class="heading-primary__main">It's Time for
+                    Smart Living
+                </span>
+                <span class="heading-primary__secondary">A system designed for your ease</span>
+            </h1>
+            <button class="btn btn--blue">Shop Promotions</button>
+        </div>
+    </header>
     <main>
-        <section id="HOME">
-            <img src="./dist/img/headerimg.webp" alt="">
-            <div class="home-container">
-                <p class="intro">Système de domotique leader Fournisseur</p>
-                <button>Demandez Nous</button>
+        <section id="ABOUT-US" class="about">
+            <div class="about__text">
+                <h2>our company</h2>
+                <p>We at Smart Home Group are located in Algeria, we deal in easy and affordable smart home
+                    solutions. Our goal is to help
+                    you create a smarter home with smartly designed products that make your life easier. As a
+                    leading smart home technology
+                    provider, we offer all types of home automation products at the best prices. Our end result is
+                    to provide smart home
+                    solutions that save you time and money to make your life easier. Contact us today!</p>
+            </div>
+            <div  class="about__container" >
+                <img class="about__container-img" src="./dist/img/2.jpg" alt="">
+
             </div>
         </section>
         <section id="CATEGORIES">
-            <header>CATEGORIES</header>
+            <h2>CATEGORIES</h2>
             <div class="cat-container">
                 <div class="cat">
                     <img src="./dist/img/C8323C4BAAA86FD005F32F5F25_1613450878085.jpg" alt="Smart Thermostat">
@@ -69,7 +98,7 @@
             </div>
         </section>
         <section id="SERVICES">
-            <header>SERVICES</header>
+            <h2>SERVICES</h2>
             <div class="serv-container">
                 <div class="serv-card">
                     <img src="./dist/img/84B3F9D8A4F7892136F5F17EEB_1521276763590.jpg" alt="">
@@ -105,30 +134,9 @@
                 </div>
             </div>
         </section>
-        <section id="ABOUT-US">
-            <div class="about-container">
-                <div class="secdairy-container">
-                    <header>À propos nous</header>
-                    <p>Nous, au sein du groupe Smart Home, sommes situés en Algérie, nous nous occupons de solutions
-                        simples et abordables
-                        pour
-                        la maison intelligente. Notre objectif est de vous aider à créer une maison plus intelligente
-                        avec des produits
-                        intelligemment conçus qui vous simplifient la vie. En tant que fournisseur leader de
-                        technologies pour la maison
-                        intelligente, nous proposons tous types de produits domotiques aux meilleurs prix. Notre
-                        résultat final est de
-                        fournir
-                        des solutions de maison intelligente qui vous font gagner du temps et de l'argent pour vous
-                        simplifier la vie.
-                        Contactez-nous dès aujourd'hui !</p>
-                </div>
 
-                <img src="./dist/img/60117C85DBB9BEBBF7B5F4EE36_1613452260004.png" alt="">
-            </div>
-        </section>
         <section id="CONTACT-US">
-            <header>contactez-nous</header>
+            <h2>contactez-nous</h2>
             <div class="contact-container">
                 <div class="infos-container">
                     <div class="contact-info">
@@ -155,7 +163,7 @@
                 <div class="form-container">
                     <form action="">
                         <input type="text" placeholder="Nom complet">
-                        <input type="text"placeholder="numéro de téléphone">
+                        <input type="text" placeholder="numéro de téléphone">
                         <input type="text" placeholder="e-mail">
                         <textarea name="" id="" cols="30" rows="10" placeholder="message d'identification"></textarea>
                         <input type="submit">

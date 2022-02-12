@@ -1,0 +1,15 @@
+@use '../abstracts'
+
+.header
+    background: url("../img/headerimg.webp") top center / cover
+    height: 80vh
+    position: relative
+    .header-container
+        text-align: center
+        position: absolute
+        top: 50%
+        left: 28%
+        transform: translate(-50%, -50%)
+        color: white
+        @include  abstracts.animat_fadeIn($direction:right,$coord-start:('x':-100%,'y':-50%),$coord-end: ('x':-50%,'y':-50%) )
+        // animation: 1s ease-out 0s 1 abstracts.$slideInLeft  

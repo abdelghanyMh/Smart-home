@@ -1,0 +1,21 @@
+// animations
+@mixin animat_fadeIn($direction,$coord-start, $coord-end)
+    $animat_name: animate__fadeIn__+$direction
+    $axis: 0
+
+    animation: $animat_name .7s ease-in .1s
+
+    @if $direction == 'left' or $direction == 'right'
+        $axis: 'X'
+
+    @else if $direction =='up'
+        $axis: 'Y'
+
+    @keyframes  #{$animat_name}
+        from
+            transform: translate(map-get($coord-start, "x"),map-get($coord-start, "y"))
+            opacity: 0
+        to
+            transform: translate(map-get($coord-end, "x"),map-get($coord-end,"y"))
+
+            opacity: 1
