@@ -1,0 +1,21 @@
+@use '../abstracts'
+
+.about
+    height: 85vh
+
+    display: grid
+    grid-template-columns: [full-start] 2rem repeat(2,[col-start] 1fr [col-end]) 2rem [full-end]
+    justify-content: space-around
+    align-items: center
+    gap: 1rem
+    &__text
+        grid-column: col-start 1 / col-end 1
+        font: 1.5rem abstracts.$font-primary
+        color: abstracts.$dark-blue
+    &__container
+        grid-column: col-start 2 / col-end 2
+        &-img
+            width: 100%
+            height: 100%
+            filter: brightness(1.15)
+            border-radius: 22px

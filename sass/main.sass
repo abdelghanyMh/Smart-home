@@ -1,5 +1,7 @@
 @use "base"
 @use "layout"
+@use "pages"
+@use "components"
 $dark-blue: rgb(45, 66, 83)
 %font-style
     color: $dark-blue
@@ -31,33 +33,12 @@ $dark-blue: rgb(45, 66, 83)
     &:hover
         background-color: #31d7cc
 
-main
-    // margin-top: 90px
-section
-    padding-top: 90px
-    header
-        @extend %font-style
-        padding: 26px
-#HOME
-    img
-        width: 100%
-        height: 100%
-    .home-container
-        position: absolute
-        top: 50%
-        left: 28%
-        transform: translate(-50%, -50%)
-        color: white
-        animation: 1s ease-out 0s 1 slideInLeft
-        p
-            font-size: 30px
-            font-weight: bold
-            font-family: sans-serif
-        button
-            @extend %button-style
+// section
+//     h2
+//         @extend %font-style
+//         padding: 26px
 
-            &:hover
-                background-color: #31d7cc
+   
 #CATEGORIES
 
     .cat-container
@@ -102,16 +83,7 @@ section
             margin-bottom: 10px
         &:hover
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
-.about-container
-    display: flex
-    flex-direction: row
-    justify-content: space-around
-    & > *
-        width: 45%
-    p
-        @extend %secondary-title
-        font-size: 1rem
-        color: lighten($dark-blue,10% )
+
 .infos-container
     @extend %flex
     justify-content: space-around
