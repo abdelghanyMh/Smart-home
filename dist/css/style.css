@@ -13,10 +13,20 @@ html {
   font-size: 62.5%;
 }
 
-#CATEGORIES .cat-container .cat p, .serv-container .serv-card h2, .serv-container .serv-card p, h2 {
+p {
+  font: 1.5rem "Changa", sans-serif;
+  color: #2d4253;
+}
+
+::selection {
+  color: #fff;
+  background-color: #2d4253;
+}
+
+#CATEGORIES .cat-container .cat p, h2 {
   color: #08293d;
   text-align: center;
-  font: bold 3rem/1.7 "Changa", sans-serif;
+  font: 400 3rem/1.7 "Changa", sans-serif;
 }
 
 .heading-primary {
@@ -37,6 +47,13 @@ html {
 
 h2 {
   padding: 26px;
+}
+
+.section-header {
+  margin: 0 !important;
+  padding-bottom: 5rem;
+  font-size: 4rem;
+  font-weight: bolder;
 }
 
 .nav {
@@ -104,6 +121,15 @@ h2 {
   }
 }
 
+#CATEGORIES .cat-container, .infos-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section:not(:first-child) {
+  padding-top: 10rem;
+}
+
 .about {
   height: 85vh;
   display: grid;
@@ -114,8 +140,6 @@ h2 {
 }
 .about__text {
   grid-column: col-start 1/col-end 1;
-  font: 1.5rem "Changa", sans-serif;
-  color: #2d4253;
 }
 .about__container {
   grid-column: col-start 2/col-end 2;
@@ -125,6 +149,16 @@ h2 {
   height: 100%;
   filter: brightness(1.15);
   border-radius: 22px;
+}
+
+.services h2 {
+  margin-top: 15rem;
+}
+.services .grid_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 5rem;
+  margin: 0px 3rem;
 }
 
 .btn {
@@ -155,7 +189,82 @@ h2 {
     transform: rotateZ(5deg);
   }
 }
-.serv-container .serv-card h2, .serv-container .serv-card p, #CATEGORIES .cat-container .cat p {
+.card {
+  display: grid;
+  align-items: end;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem;
+}
+.card, .card > * {
+  transition: 0.3s cubic-bezier(0.3, 0, 0, 1.3);
+}
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  transform: translateX(-3px);
+}
+.card:hover h2 {
+  z-index: 99;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+}
+.card:hover p {
+  margin-top: 7rem;
+}
+.card:hover .cta {
+  display: block;
+}
+.card-1:hover h2 {
+  background-color: #08293d;
+}
+.card-2:hover h2 {
+  background-color: #561691;
+}
+.card-3:hover h2 {
+  background-color: #c69963;
+}
+.card-4:hover h2 {
+  background-color: #aaa;
+}
+.card__picture {
+  background-color: #28beb4;
+  border-radius: 50%;
+  position: absolute;
+  top: -15rem;
+  left: -4rem;
+  height: 30rem;
+  width: 35rem;
+}
+.card__picture-1 {
+  background: url(../img/maintenance.jpg) center bottom/cover no-repeat;
+}
+.card__picture-2 {
+  background: url(../img/installation.jpg) center bottom/cover no-repeat;
+}
+.card__picture-3 {
+  background: url(../img/consultation.jpg) center bottom/cover no-repeat;
+}
+.card__picture-4 {
+  background: url(../img/annual.webp) center bottom/cover no-repeat;
+}
+.card:hover > .card__picture {
+  border-radius: 0;
+  top: -9rem;
+}
+
+.grid_container:hover > *:not(:hover) {
+  transform: scale(0.9);
+  box-shadow: none;
+}
+
+.cta {
+  display: none;
+}
+
+#CATEGORIES .cat-container .cat p {
   color: #2d4253;
   text-align: center;
   font-size: 30px;
@@ -164,28 +273,13 @@ h2 {
   line-height: 1.7;
 }
 
-.serv-container .serv-card h2, .serv-container .serv-card p, #CATEGORIES .cat-container .cat p {
+#CATEGORIES .cat-container .cat p {
   font-weight: initial;
 }
 
-.infos-container, .serv-container, #CATEGORIES .cat-container {
+.infos-container, #CATEGORIES .cat-container {
   display: flex;
   flex-wrap: wrap;
-}
-
-.serv-container .serv-card button {
-  background-color: #28beb4;
-  color: #ffffff;
-  border-color: #31d7cc;
-  outline-color: transparent;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 12px 25px;
-  border-width: 2px;
-  border-radius: 27px;
-}
-.serv-container .serv-card button:hover {
-  background-color: #31d7cc;
 }
 
 #CATEGORIES .cat-container {
@@ -203,32 +297,6 @@ h2 {
 }
 #CATEGORIES .cat-container .cat:hover p {
   color: #64c4bd;
-}
-
-.serv-container {
-  justify-content: space-around;
-}
-.serv-container .serv-card {
-  width: 22%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.serv-container .serv-card p {
-  font-size: 1rem;
-  color: #3f5c74;
-}
-.serv-container .serv-card img {
-  border-radius: 14px;
-  padding: 10px;
-}
-.serv-container .serv-card button {
-  width: 50%;
-  align-self: center;
-  margin-bottom: 10px;
-}
-.serv-container .serv-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .infos-container {

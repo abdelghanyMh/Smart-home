@@ -1,0 +1,70 @@
+@use '../abstracts'
+
+.card
+    display: grid
+    align-items: end
+    box-shadow: rgb(abstracts.$dark , 15%) 2.4px 2.4px 3.2px
+    overflow: hidden
+    position: relative
+    padding: 2rem
+
+    & ,& > *
+        transition: .3s cubic-bezier(.3, 0, 0, 1.3)
+    &:hover
+        box-shadow: rgb(abstracts.$dark , 15%) 0px 15px 25px, rgb(0 0 0 / 5%) 0px 5px 10px
+        transform: translateX(-3px)
+
+        h2
+            z-index: 99
+            color: white
+            margin: 0
+            padding: 0
+            font-weight: 100
+        p
+            margin-top: 7rem
+
+        .cta
+            display: block
+    &-1:hover h2
+        background-color: abstracts.$dark-blue-1
+
+    &-2:hover h2
+        background-color: abstracts.$dark-violet
+
+    &-3:hover h2
+        background-color: abstracts.$orange
+
+    &-4:hover h2
+        background-color: abstracts.$light-grey
+
+    &__picture
+        background-color: abstracts.$light-blue
+        border-radius: 50%
+
+        position: absolute
+        top: -15rem
+        left: -4rem
+
+        height: 30rem
+        width: 35rem
+
+    &__picture-1
+        background: url(../img/maintenance.jpg) center bottom / cover no-repeat
+    &__picture-2
+        background: url(../img/installation.jpg) center bottom / cover no-repeat
+    &__picture-3
+        background: url(../img/consultation.jpg) center bottom / cover no-repeat
+    &__picture-4
+        background: url(../img/annual.webp) center bottom / cover no-repeat
+
+    &:hover > &__picture
+        border-radius: 0
+        top: -9rem
+
+// select All non-hoverd siblings 
+.grid_container:hover > *:not(:hover)
+    transform: scale(0.9)
+    box-shadow: none
+
+.cta
+    display: none

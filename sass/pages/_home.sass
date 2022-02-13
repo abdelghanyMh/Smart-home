@@ -1,4 +1,10 @@
 @use '../abstracts'
+%flex
+    display: flex
+    flex-wrap: wrap
+
+section:not(:first-child)
+    padding-top: 10rem
 
 .about
     height: 85vh
@@ -10,8 +16,6 @@
     gap: 1rem
     &__text
         grid-column: col-start 1 / col-end 1
-        font: 1.5rem abstracts.$font-primary
-        color: abstracts.$dark-blue
     &__container
         grid-column: col-start 2 / col-end 2
         &-img
@@ -19,3 +23,12 @@
             height: 100%
             filter: brightness(1.15)
             border-radius: 22px
+
+.services
+    h2
+        margin-top: 15rem
+    .grid_container
+        display: grid
+        grid-template-columns: repeat( auto-fit , minmax(25rem,1fr) )
+        gap: 5rem
+        margin: 0px 3rem

@@ -60,29 +60,6 @@ $dark-blue: rgb(45, 66, 83)
             &:hover
                 p
                     color: rgba(100, 196, 189, 1)
-.serv-container
-    @extend %flex
-    justify-content: space-around
-    .serv-card
-        width: 22%
-        display: flex
-        flex-direction: column
-        justify-content: space-evenly
-        h2,p
-            @extend %secondary-title
-        p
-            font-size: 1rem
-            color: lighten($dark-blue,10% )
-        img
-            border-radius: 14px
-            padding: 10px
-        button
-            @extend %button-style
-            width: 50%
-            align-self: center
-            margin-bottom: 10px
-        &:hover
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
 
 .infos-container
     @extend %flex
