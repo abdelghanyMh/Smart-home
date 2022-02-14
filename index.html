@@ -185,14 +185,6 @@
                 </div>
             </div>
             <div class="contact__form">
-
-                <form action="">
-                    <input type="text" placeholder="Nom complet">
-                    <input type="tel" placeholder="numéro de téléphone">
-                    <input type="email" placeholder="e-mail">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="message d'identification"></textarea>
-                    <input type="submit">
-                </form>
                 <div class="contact__form-text">
 
                     <h3>Drop us a line</h3>
@@ -200,6 +192,34 @@
                         flavor ideas? We
                         would love to hear them!</p>
                 </div>
+                <form action="#" class="form__container">
+                    <div class="form__group">
+                        <input type="text" class="form__input" placeholder="Full name" id="name" required>
+                        <label for="name" class="form__label">Full name</label>
+                    </div>
+
+                    <div class="form__group">
+                        <input type="email" class="form__input" placeholder="Email address" id="email" required>
+                        <label for="email" class="form__label">Email address</label>
+                    </div>
+
+                    <div class="form__group">
+                        <input type="tel" class="form__input" placeholder="Phone number" id="tel" required>
+                        <label for="tel" class="form__label">Phone number</label>
+                    </div>
+                    <div class="form__group">
+                        <label for="message" class="form__label form__label-textarea">Message</label>
+
+                        <textarea name="" id="message" cols="30" rows="3" class="form__input"
+                            placeholder="Message"></textarea>
+
+
+
+                    </div>
+
+                    <input class='btn' type="submit" value="send">
+                </form>
+
             </div>
         </section>
     </main>

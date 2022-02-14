@@ -122,11 +122,6 @@ h2, h3 {
   }
 }
 
-.infos-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 section:not(:first-child) {
   padding-top: 10rem;
 }
@@ -274,6 +269,7 @@ section:not(:first-child) {
   font-family: "Changa", sans-serif;
 }
 .contact__form {
+  padding-bottom: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -287,7 +283,8 @@ section:not(:first-child) {
   grid-column: 1/span 2;
 }
 .contact__form-text {
-  place-self: center;
+  place-self: start center;
+  transform: translateY(2rem);
   width: 60%;
 }
 
@@ -391,46 +388,63 @@ section:not(:first-child) {
   display: none;
 }
 
-.infos-container {
-  display: flex;
-  flex-wrap: wrap;
+.form__container {
+  justify-self: self-start;
+}
+.form__group {
+  position: relative;
+  border: none;
+}
+.form__label {
+  font: bold 2rem "Changa", sans-serif;
+  display: block;
+  transition: all 0.3s;
+  -webkit-transform: translate(1rem, -8.5rem);
+  transform: translate(1rem, -8.5rem);
+}
+.form__label-textarea {
+  -webkit-transform: translateX(1rem);
+  transform: translateX(1rem);
+}
+.form__input {
+  font: 2rem "Big Shoulders Display", cursive;
+  letter-spacing: 1px;
+  color: inherit;
+  padding: 1rem 1.5rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  display: block;
+  transition: all 0.3s;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+.form__input::placeholder {
+  font: bold 2rem "Big Shoulders Display", cursive;
+}
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(40, 190, 180, 0.1);
+  border-bottom: 3px solid #28beb4;
+}
+.form__input:focus:invalid {
+  box-shadow: 0 1rem 2rem rgba(255, 119, 119, 0.1);
+  border-bottom: 3px solid #f77;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(1rem, -3.1rem);
+  -webkit-transform: translate(1rem, -3.1rem);
 }
 
-.infos-container {
-  justify-content: space-around;
-}
-.infos-container > * {
-  width: 20%;
-  border-right: 1px solid rgba(204, 204, 204, 0.4);
-}
-.infos-container img {
-  width: 42px;
-  height: 42px;
+input::-webkit-input-placeholder {
+  color: #000;
 }
 
-form {
-  width: 50%;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-}
-form > * {
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid gray;
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translate(0%, 0%);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
+.btn {
+  border: none;
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

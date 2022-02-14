@@ -1,0 +1,58 @@
+@use '../abstracts'
+$default-fsize: 2rem
+
+.form
+    &__container
+        justify-self: self-start
+    &__group
+        position: relative
+        border: none
+
+    &__label
+        font: bold $default-fsize abstracts.$font-primary
+
+        display: block
+        transition: all 0.3s
+        -webkit-transform: translate(1rem, -8.5rem)
+        transform: translate(1rem, -8.5rem)
+
+        &-textarea
+            -webkit-transform: translateX(1rem)
+            transform: translateX(1rem)
+    &__input
+        font: $default-fsize abstracts.$font-display
+        letter-spacing: 1px
+        color: inherit
+        padding: 1rem 1.5rem
+        border-radius: 2px
+        background-color: rgba(abstracts.$white , .5)
+        border-bottom: 3px solid transparent
+        width: 100%
+        display: block
+        transition: all 0.3s
+        box-shadow: 0 0 .5rem rgba(abstracts.$dark , .5)
+        &::placeholder
+            font: bold $default-fsize abstracts.$font-display
+
+        &:focus
+            outline: none
+            box-shadow: 0 1rem 2rem rgba(abstracts.$light-blue,.1 )
+            border-bottom: 3px solid abstracts.$light-blue
+
+            &:invalid
+                box-shadow: 0 1rem 2rem rgba(abstracts.$light-pink,.1 )
+                border-bottom: 3px solid abstracts.$light-pink
+
+        &:placeholder-shown + .form__label
+            opacity: 0
+            visibility: hidden
+
+            transform: translate(1rem, -3.1rem)
+            -webkit-transform: translate(1rem, -3.1rem)
+
+input::-webkit-input-placeholder
+    color: abstracts.$dark
+
+.btn
+    border: none
+    margin-top: 1rem
