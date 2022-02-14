@@ -3,6 +3,12 @@
     display: flex
     flex-wrap: wrap
 
+@mixin item_image($bg-clr:'abstracts.$dark-blue',$url:"")
+    background-color: $bg-clr
+    background: url($url) top center / cover no-repeat
+    &:hover
+        background-image: linear-gradient(rgba(abstracts.$dark,.3),rgba(abstracts.$dark,.3)) , url($url)
+
 section:not(:first-child)
     padding-top: 10rem
 
@@ -27,8 +33,59 @@ section:not(:first-child)
 .services
     h2
         margin-top: 15rem
-    .grid_container
+    .grid-container
         display: grid
         grid-template-columns: repeat( auto-fit , minmax(25rem,1fr) )
         gap: 5rem
         margin: 0px 3rem
+
+.category
+    .grid-container
+        display: grid
+        grid-template-columns: repeat( auto-fit , minmax(25rem, 1fr) )
+        grid-template-rows: minmax(25rem, 1fr) minmax(25rem, 1fr)
+        gap: 3rem
+        margin: 0px 3rem
+
+    &__item
+        padding-top: 60%
+        border-radius: 35%
+        &:hover
+            border-radius: 0%
+            .category__text
+                transform: skewX(-16deg)
+                width: 70%
+                margin: 0 auto
+                & > *
+                    transform: skewX(16deg)
+
+    &__text
+        text-align: center
+        background-color: abstracts.$white
+        p
+            font: bold 3rem abstracts.$font-display
+            color: abstracts.$orange
+
+    &__item-1
+        @include item_image($bg-clr:'abstracts.$dark-blue',$url:'../img/smart-thermostat.jpg')
+
+    &__item-2
+        @include item_image($bg-clr:'abstracts.$light-blue',$url:'../img/smart-ac.jpg')
+
+    &__item-3
+        @include item_image($bg-clr:'abstracts.$orange',$url:'../img/electric-blinds.webp')
+
+    &__item-4
+        @include item_image($bg-clr:'abstracts.$light-grey',$url:'../img/smart-plug.jpg')
+
+    &__item-5
+        @include item_image($bg-clr:'abstracts.$dark-violet',$url:'../img/smart-water-heater.jpg')
+
+    &__item-6
+        @include item_image($bg-clr:' abstracts.$light-blue',$url:'../img/movement-detector.jpg')
+
+    &__item-7
+        @include item_image($bg-clr:' abstracts.$dark-blue',$url:'../img/video-surveillance.jpg')
+
+    &__item-8
+        @include item_image($bg-clr:'abstracts.$light-grey',$url:'../img/smart-lock.jpg')

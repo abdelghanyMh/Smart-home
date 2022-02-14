@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  transition: 0.3s cubic-bezier(0.3, 0, 0, 1.3);
 }
 
 html {
@@ -23,7 +24,7 @@ p {
   background-color: #2d4253;
 }
 
-#CATEGORIES .cat-container .cat p, h2 {
+h2 {
   color: #08293d;
   text-align: center;
   font: 400 3rem/1.7 "Changa", sans-serif;
@@ -121,11 +122,6 @@ h2 {
   }
 }
 
-#CATEGORIES .cat-container, .infos-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 section:not(:first-child) {
   padding-top: 10rem;
 }
@@ -154,11 +150,98 @@ section:not(:first-child) {
 .services h2 {
   margin-top: 15rem;
 }
-.services .grid_container {
+.services .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 5rem;
   margin: 0px 3rem;
+}
+
+.category .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-rows: minmax(25rem, 1fr) minmax(25rem, 1fr);
+  gap: 3rem;
+  margin: 0px 3rem;
+}
+.category__item {
+  padding-top: 60%;
+  border-radius: 35%;
+}
+.category__item:hover {
+  border-radius: 0%;
+}
+.category__item:hover .category__text {
+  transform: skewX(-16deg);
+  width: 70%;
+  margin: 0 auto;
+}
+.category__item:hover .category__text > * {
+  transform: skewX(16deg);
+}
+.category__text {
+  text-align: center;
+  background-color: #fff;
+}
+.category__text p {
+  font: bold 3rem "Big Shoulders Display", cursive;
+  color: #c69963;
+}
+.category__item-1 {
+  background-color: "abstracts.$dark-blue";
+  background: url("../img/smart-thermostat.jpg") top center/cover no-repeat;
+}
+.category__item-1:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/smart-thermostat.jpg");
+}
+.category__item-2 {
+  background-color: "abstracts.$light-blue";
+  background: url("../img/smart-ac.jpg") top center/cover no-repeat;
+}
+.category__item-2:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/smart-ac.jpg");
+}
+.category__item-3 {
+  background-color: "abstracts.$orange";
+  background: url("../img/electric-blinds.webp") top center/cover no-repeat;
+}
+.category__item-3:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/electric-blinds.webp");
+}
+.category__item-4 {
+  background-color: "abstracts.$light-grey";
+  background: url("../img/smart-plug.jpg") top center/cover no-repeat;
+}
+.category__item-4:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/smart-plug.jpg");
+}
+.category__item-5 {
+  background-color: "abstracts.$dark-violet";
+  background: url("../img/smart-water-heater.jpg") top center/cover no-repeat;
+}
+.category__item-5:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/smart-water-heater.jpg");
+}
+.category__item-6 {
+  background-color: " abstracts.$light-blue";
+  background: url("../img/movement-detector.jpg") top center/cover no-repeat;
+}
+.category__item-6:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/movement-detector.jpg");
+}
+.category__item-7 {
+  background-color: " abstracts.$dark-blue";
+  background: url("../img/video-surveillance.jpg") top center/cover no-repeat;
+}
+.category__item-7:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/video-surveillance.jpg");
+}
+.category__item-8 {
+  background-color: "abstracts.$light-grey";
+  background: url("../img/smart-lock.jpg") top center/cover no-repeat;
+}
+.category__item-8:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/smart-lock.jpg");
 }
 
 .btn {
@@ -196,9 +279,6 @@ section:not(:first-child) {
   overflow: hidden;
   position: relative;
   padding: 2rem;
-}
-.card, .card > * {
-  transition: 0.3s cubic-bezier(0.3, 0, 0, 1.3);
 }
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
@@ -255,85 +335,13 @@ section:not(:first-child) {
   top: -9rem;
 }
 
-.grid_container:hover > *:not(:hover) {
+.services .grid-container:hover > *:not(:hover) {
   transform: scale(0.9);
   box-shadow: none;
 }
 
 .cta {
   display: none;
-}
-
-#CATEGORIES .cat-container .cat p {
-  color: #2d4253;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  font-family: sans-serif;
-  line-height: 1.7;
-}
-
-#CATEGORIES .cat-container .cat p {
-  font-weight: initial;
-}
-
-.infos-container, #CATEGORIES .cat-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#CATEGORIES .cat-container {
-  justify-content: space-evenly;
-  row-gap: 30px;
-}
-#CATEGORIES .cat-container .cat img {
-  width: 409.656px;
-  height: 240.203px;
-  border-radius: 14px;
-}
-#CATEGORIES .cat-container .cat p {
-  padding-top: 20px;
-  margin: 0;
-}
-#CATEGORIES .cat-container .cat:hover p {
-  color: #64c4bd;
-}
-
-.infos-container {
-  justify-content: space-around;
-}
-.infos-container > * {
-  width: 20%;
-  border-right: 1px solid rgba(204, 204, 204, 0.4);
-}
-.infos-container img {
-  width: 42px;
-  height: 42px;
-}
-
-form {
-  width: 50%;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-}
-form > * {
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid gray;
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translate(0%, 0%);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
