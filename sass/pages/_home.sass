@@ -113,3 +113,18 @@ section:not(:first-child)
                 color: abstracts.$dark-blue
             p:not(:last-child)
                 font-family: abstracts.$font-primary
+    &__form
+        display: grid
+        grid-template-columns: 1fr 1fr
+        &::before
+            content: ''
+            width: 80%
+            height: 1px
+            background-color: abstracts.$light-grey
+            display: block
+            margin: 5rem auto
+            grid-column: 1 / span 2
+
+        &-text
+            place-self: center
+            width: 60%

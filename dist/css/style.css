@@ -24,7 +24,7 @@ p {
   background-color: #2d4253;
 }
 
-h2 {
+h2, h3 {
   color: #08293d;
   text-align: center;
   font: 400 3rem/1.7 "Changa", sans-serif;
@@ -46,7 +46,7 @@ h2 {
   letter-spacing: 0.6rem;
 }
 
-h2 {
+h2, h3 {
   padding: 26px;
 }
 
@@ -272,6 +272,23 @@ section:not(:first-child) {
 }
 .contact__info-text p:not(:last-child) {
   font-family: "Changa", sans-serif;
+}
+.contact__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact__form::before {
+  content: "";
+  width: 80%;
+  height: 1px;
+  background-color: #aaa;
+  display: block;
+  margin: 5rem auto;
+  grid-column: 1/span 2;
+}
+.contact__form-text {
+  place-self: center;
+  width: 60%;
 }
 
 .btn {
