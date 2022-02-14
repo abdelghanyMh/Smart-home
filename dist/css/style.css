@@ -122,6 +122,11 @@ h2 {
   }
 }
 
+.infos-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 section:not(:first-child) {
   padding-top: 10rem;
 }
@@ -244,6 +249,31 @@ section:not(:first-child) {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/smart-lock.jpg");
 }
 
+.contact__infos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  place-items: center;
+  gap: 3rem;
+}
+.contact img {
+  width: 4rem;
+  height: 5rem;
+}
+.contact__info {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem;
+}
+.contact__info-text > * {
+  font-size: 2rem !important;
+  font-family: "Big Shoulders Display", cursive;
+  color: #2d4253;
+}
+.contact__info-text p:not(:last-child) {
+  font-family: "Changa", sans-serif;
+}
+
 .btn {
   background-color: #28beb4;
   color: #ffffff;
@@ -342,6 +372,48 @@ section:not(:first-child) {
 
 .cta {
   display: none;
+}
+
+.infos-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.infos-container {
+  justify-content: space-around;
+}
+.infos-container > * {
+  width: 20%;
+  border-right: 1px solid rgba(204, 204, 204, 0.4);
+}
+.infos-container img {
+  width: 42px;
+  height: 42px;
+}
+
+form {
+  width: 50%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+form > * {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid gray;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

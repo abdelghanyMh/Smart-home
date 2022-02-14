@@ -89,3 +89,27 @@ section:not(:first-child)
 
     &__item-8
         @include item_image($bg-clr:'abstracts.$light-grey',$url:'../img/smart-lock.jpg')
+
+.contact
+    &__infos
+        display: grid
+        grid-template-columns: repeat( auto-fit , minmax(24rem,1fr))
+        place-items: center
+        gap: 3rem
+
+    img
+        width: 4rem
+        height: 5rem
+
+    &__info
+        display: flex
+        align-items: center
+        gap: 3rem
+        padding: 3rem
+        &-text
+            & > *
+                font-size: 2rem !important
+                font-family: abstracts.$font-display
+                color: abstracts.$dark-blue
+            p:not(:last-child)
+                font-family: abstracts.$font-primary
