@@ -8,8 +8,6 @@
     position: relative
     padding: 2rem
 
-    & ,& > *
-        transition: .3s cubic-bezier(.3, 0, 0, 1.3)
     &:hover
         box-shadow: rgb(abstracts.$dark , 15%) 0px 15px 25px, rgb(0 0 0 / 5%) 0px 5px 10px
         transform: translateX(-3px)
@@ -61,10 +59,11 @@
         border-radius: 0
         top: -9rem
 
-// select All non-hoverd siblings 
-.grid_container:hover > *:not(:hover)
-    transform: scale(0.9)
-    box-shadow: none
+.services
+    // select All non-hoverd siblings 
+    .grid-container:hover > *:not(:hover)
+        transform: scale(0.9)
+        box-shadow: none
 
 .cta
     display: none
