@@ -1,0 +1,63 @@
+@use '../abstracts'
+
+%margin-bottom-small
+    margin-bottom: 2rem
+
+.footer
+    padding: 4rem
+    background: darken(abstracts.$light-blue, 30%)
+    display: grid
+    grid-template-columns: repeat( 3 , 1fr)
+
+    font: 2rem abstracts.$font-primary
+    color: abstracts.$white
+    &__header
+        @extend %margin-bottom-small
+
+        &::after
+            content: ''
+            display: block
+            background-color: abstracts.$orange
+            width: 45%
+            height: 2px
+        &:hover
+            &::after
+                animation: pulse 1s cubic-bezier(.68,-0.55,.27,1.55) infinite alternate
+
+.social
+    place-self: center
+    .logo
+        padding: 0
+        @extend %margin-bottom-small
+
+    .company
+
+        @extend %margin-bottom-small
+
+    &__list
+        list-style: none
+        display: flex
+        gap: 1rem
+    &__link
+        img
+            width: 2.6rem
+            hieght: 2.6rem
+
+.support
+    display: grid
+    justify-content: center
+    &__link:visited,&__link:link
+        text-decoration: none
+        color: abstracts.$white
+        &:hover
+            @include abstracts.hoverd-link
+            color: abstracts.$light-pink
+
+.form__input
+    background-color: abstracts.$white !important
+    color: abstracts.$dark !important
+@keyframes pulse
+    from
+        width: 0%
+    to
+        width: 45%

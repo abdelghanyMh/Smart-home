@@ -111,8 +111,14 @@ section:not(:first-child)
                 font-size: 2rem !important
                 font-family: abstracts.$font-display
                 color: abstracts.$dark-blue
+                text-decoration: none
+
+                &:nth-child(2):hover
+                    @include abstracts.hoverd-link
+
             p:not(:last-child)
                 font-family: abstracts.$font-primary
+
     &__form
         padding-bottom: 3rem
         display: grid
