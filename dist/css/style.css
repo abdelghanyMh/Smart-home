@@ -47,7 +47,7 @@ h2, h3 {
 }
 
 h2, h3 {
-  padding: 26px;
+  padding: 2.6rem;
 }
 
 .section-header {
@@ -144,7 +144,7 @@ section:not(:first-child) {
   width: 100%;
   height: 100%;
   filter: brightness(1.15);
-  border-radius: 22px;
+  border-radius: 1.3rem;
 }
 
 .services h2 {
@@ -294,10 +294,10 @@ section:not(:first-child) {
   border-color: #31d7cc;
   outline-color: transparent;
   text-decoration: none;
-  font-size: 16px;
-  padding: 12px 25px;
-  border-width: 2px;
-  border-radius: 2px;
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+  border-width: 0.12rem;
+  border-radius: 0.12rem;
   cursor: pointer;
 }
 .btn:hover {
@@ -325,7 +325,7 @@ section:not(:first-child) {
   padding: 2rem;
 }
 .card:hover {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0rem 1rem 1.5rem, rgba(0, 0, 0, 0.05) 0px 0.3rem 0.6rem;
   transform: translateX(-3px);
 }
 .card:hover h2 {
@@ -390,6 +390,7 @@ section:not(:first-child) {
 
 .form__container {
   justify-self: self-start;
+  width: 60%;
 }
 .form__group {
   position: relative;
@@ -410,14 +411,15 @@ section:not(:first-child) {
   font: 2rem "Big Shoulders Display", cursive;
   letter-spacing: 1px;
   color: inherit;
-  padding: 1rem 1.5rem;
-  border-radius: 2px;
   background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  border: 1px solid #aaa;
   border-bottom: 3px solid transparent;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  padding: 1rem 1.5rem;
   width: 100%;
   display: block;
   transition: all 0.3s;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
 .form__input::placeholder {
   font: bold 2rem "Big Shoulders Display", cursive;

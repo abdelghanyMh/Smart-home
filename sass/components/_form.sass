@@ -4,6 +4,7 @@ $default-fsize: 2rem
 .form
     &__container
         justify-self: self-start
+        width: 60%
     &__group
         position: relative
         border: none
@@ -23,14 +24,18 @@ $default-fsize: 2rem
         font: $default-fsize abstracts.$font-display
         letter-spacing: 1px
         color: inherit
-        padding: 1rem 1.5rem
-        border-radius: 2px
         background-color: rgba(abstracts.$white , .5)
+
+        border-radius: 2px
+        border: 1px solid abstracts.$light-grey
         border-bottom: 3px solid transparent
+        box-shadow: 0 0 .5rem rgba(abstracts.$dark , .5)
+
+        padding: 1rem 1.5rem
         width: 100%
         display: block
+
         transition: all 0.3s
-        box-shadow: 0 0 .5rem rgba(abstracts.$dark , .5)
         &::placeholder
             font: bold $default-fsize abstracts.$font-display
 
