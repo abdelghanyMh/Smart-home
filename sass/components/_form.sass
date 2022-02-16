@@ -5,6 +5,9 @@ $default-fsize: 2rem
     &__container
         justify-self: self-start
         width: 60%
+        @include abstracts.respond(tab-land)
+            justify-self: center
+
     &__group
         position: relative
         border: none

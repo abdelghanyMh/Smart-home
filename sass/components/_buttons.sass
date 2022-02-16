@@ -25,6 +25,9 @@ $btn-default-fsize: 1.6rem
         background-color: #31d7cc
         animation: shake 0.3s linear 1
 
+    @include abstracts.respond(tab-port) // width < 900?
+        padding: 2rem 4rem
+
 @keyframes shake
     33%
         transform: rotateZ(5deg)
