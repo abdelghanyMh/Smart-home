@@ -18,10 +18,17 @@
         letter-spacing: 0.8rem
 h2,h3
     @extend %font-style
-    padding: 2.6rem
+    padding: 2.6rem 0rem
 
 .section-header
     margin: 0 !important
     padding-bottom: 5rem
     font-size: 4rem
     font-weight: bolder
+
+@include abstracts.respond(tab-port)
+    .heading-primary
+        &__main
+            letter-spacing: .5rem
+        &__secondary
+            letter-spacing: 0.4rem

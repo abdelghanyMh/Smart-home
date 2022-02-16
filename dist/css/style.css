@@ -1,3 +1,15 @@
+/* 0 - 600px:      Phone
+ * 600 - 900px:    Tablet portrait
+ * 900 - 1024px:   Tablet landscape 
+ * [1200 - 1800] is where our normal styles apply
+ * 1800px + :      Big desktop
+ *
+ *  $breakpoint arguement choices: 
+ *      - phone
+ *      - tab-port
+ *      - tab-land
+ *      - big-desktop
+ *      1em = 16px */
 *,
 *::before,
 *::after {
@@ -12,6 +24,11 @@ html {
   box-sizing: border-box;
   text-transform: capitalize;
   font-size: 62.5%;
+}
+@media only screen and (max-width: 66.25em) {
+  html {
+    font-size: 50%;
+  }
 }
 
 p {
@@ -47,7 +64,7 @@ h2, h3 {
 }
 
 h2, h3 {
-  padding: 2.6rem;
+  padding: 2.6rem 0rem;
 }
 
 .section-header {
@@ -57,6 +74,14 @@ h2, h3 {
   font-weight: bolder;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .heading-primary__main {
+    letter-spacing: 0.5rem;
+  }
+  .heading-primary__secondary {
+    letter-spacing: 0.4rem;
+  }
+}
 .nav {
   z-index: 40;
   background: #08293d;
@@ -136,6 +161,12 @@ h2, h3 {
 .footer__header:hover::after {
   animation: pulse 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
 }
+@media only screen and (max-width: 56.25em) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+}
 
 .social {
   place-self: center;
@@ -150,7 +181,11 @@ h2, h3 {
 }
 .social__link img {
   width: 2.6rem;
-  hieght: 2.6rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .social__link img {
+    width: 4.6rem;
+  }
 }
 
 .support {
@@ -168,11 +203,49 @@ h2, h3 {
   color: #f77;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .newsletter {
+    grid-column: 2/-1;
+  }
+}
+
 .form__input {
   background-color: #fff !important;
   color: #000 !important;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+  .footer .logo a svg {
+    width: 7rem !important;
+    height: 7rem !important;
+  }
+  .footer .logo a span {
+    font-size: 5rem !important;
+    line-height: 3rem !important;
+  }
+
+  .social {
+    grid-area: 1/span 3;
+  }
+  .social__link img {
+    width: 4.6rem;
+  }
+
+  .support {
+    justify-content: start;
+  }
+
+  .newsletter {
+    grid-column: 2/-1;
+  }
+  .newsletter form {
+    width: 100%;
+  }
+}
 @keyframes pulse {
   from {
     width: 0%;
@@ -186,6 +259,7 @@ section:not(:first-child) {
 }
 
 .about {
+  margin-top: 5rem;
   height: 85vh;
   display: grid;
   grid-template-columns: [full-start] 2rem repeat(2, [col-start] 1fr [col-end]) 2rem [full-end];
@@ -205,23 +279,45 @@ section:not(:first-child) {
   filter: brightness(1.15);
   border-radius: 1.3rem;
 }
+@media only screen and (max-width: 66.25em) {
+  .about {
+    grid-template-columns: [full-start] 5rem repeat(2, [col-start] 1fr [col-end]) 5rem [full-end];
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .about__text, .about__container {
+    grid-column: col-start 1/col-end 2;
+  }
+  .about__container {
+    text-align: center;
+  }
+  .about__container-img {
+    width: 70%;
+  }
+}
 
 .services h2 {
   margin-top: 15rem;
 }
 .services .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 5rem;
   margin: 0px 3rem;
 }
 
 .category .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-template-rows: minmax(25rem, 1fr) minmax(25rem, 1fr);
-  gap: 3rem;
-  margin: 0px 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-rows: repeat(2, minmax(22rem, 1fr));
+  gap: 3vw;
+  margin: 0px 3vw;
+}
+@media only screen and (max-width: 56.25em) {
+  .category .grid-container {
+    margin: 0px 6vw;
+    grid-template-rows: repeat(3, minmax(22rem, 1fr));
+  }
 }
 .category__item {
   padding-top: 60%;
@@ -305,9 +401,19 @@ section:not(:first-child) {
 
 .contact__infos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(24rem, max-content));
   place-items: center;
-  gap: 3rem;
+  justify-content: center;
+}
+@media only screen and (max-width: 66.25em) {
+  .contact__infos {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .contact__infos {
+    row-gap: 10rem;
+  }
 }
 .contact img {
   width: 4rem;
@@ -316,8 +422,20 @@ section:not(:first-child) {
 .contact__info {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 3vw;
   padding: 3rem;
+}
+@media only screen and (max-width: 66.25em) {
+  .contact__info {
+    gap: 1vw;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .contact__info {
+    width: max-content;
+    padding: 0rem;
+  }
 }
 .contact__info-text > * {
   font-size: 2rem !important;
@@ -352,6 +470,20 @@ section:not(:first-child) {
   transform: translateY(2rem);
   width: 60%;
 }
+@media only screen and (max-width: 56.25em) {
+  .contact__form {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+    grid-row-gap: 5vw;
+    margin-top: 5vh;
+  }
+  .contact__form::before {
+    display: none;
+  }
+  .contact__form__container {
+    justify-self: center;
+  }
+}
 
 .btn {
   background-color: #28beb4;
@@ -368,6 +500,11 @@ section:not(:first-child) {
 .btn:hover {
   background-color: #31d7cc;
   animation: shake 0.3s linear 1;
+}
+@media only screen and (max-width: 56.25em) {
+  .btn {
+    padding: 2rem 4rem;
+  }
 }
 
 @keyframes shake {
@@ -394,14 +531,14 @@ section:not(:first-child) {
   transform: translateX(-3px);
 }
 .card:hover h2 {
-  z-index: 99;
+  z-index: 39;
   color: white;
   margin: 0;
   padding: 0;
   font-weight: 100;
 }
 .card:hover p {
-  margin-top: 7rem;
+  margin-top: 7rem !important;
 }
 .card:hover .cta {
   display: block;
@@ -420,6 +557,7 @@ section:not(:first-child) {
 }
 .card__picture {
   background-color: #28beb4;
+  background-position: center bottom;
   border-radius: 50%;
   position: absolute;
   top: -15rem;
@@ -453,9 +591,48 @@ section:not(:first-child) {
   display: none;
 }
 
+@media only screen and (max-width: 66.25em) {
+  .card h2 {
+    z-index: 39;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+  }
+  .card p {
+    margin-top: 7rem;
+  }
+  .card .cta {
+    display: block;
+  }
+  .card-1 h2 {
+    background-color: #08293d;
+  }
+  .card-2 h2 {
+    background-color: #561691;
+  }
+  .card-3 h2 {
+    background-color: #c69963;
+  }
+  .card-4 h2 {
+    background-color: #aaa;
+  }
+  .card:hover > .card__picture, .card__picture {
+    background-position: top !important;
+    top: -15rem;
+    border-radius: 0%;
+    left: 0rem;
+    height: 27rem;
+  }
+}
 .form__container {
   justify-self: self-start;
   width: 60%;
+}
+@media only screen and (max-width: 66.25em) {
+  .form__container {
+    justify-self: center;
+  }
 }
 .form__group {
   position: relative;
@@ -524,11 +701,12 @@ input::-webkit-input-placeholder {
   gap: 0.6rem;
 }
 .logo a span {
-  font-size: 2.4rem;
+  font-size: 3rem;
+  line-height: 1rem;
 }
 .logo a svg {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   fill: #fff;
 }
 
