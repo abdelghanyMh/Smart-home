@@ -9,17 +9,17 @@
     padding: 2rem
 
     &:hover
-        box-shadow: rgb(abstracts.$dark , 15%) 0rem 1rem 1.5rem, rgb(0 0 0 / 5%) 0px .3rem .6rem 
+        box-shadow: rgb(abstracts.$dark , 15%) 0rem 1rem 1.5rem, rgb(0 0 0 / 5%) 0px .3rem .6rem
         transform: translateX(-3px)
 
         h2
-            z-index: 99
+            z-index: abstracts.$zindex-card-header
             color: white
             margin: 0
             padding: 0
             font-weight: 100
         p
-            margin-top: 7rem
+            margin-top: 7rem !important
 
         .cta
             display: block
@@ -37,6 +37,7 @@
 
     &__picture
         background-color: abstracts.$light-blue
+        background-position: center bottom
         border-radius: 50%
 
         position: absolute
@@ -67,3 +68,34 @@
 
 .cta
     display: none
+
+@include abstracts.respond(tab-land)
+    .card
+        h2
+            z-index: abstracts.$zindex-card-header
+            color: white
+            margin: 0
+            padding: 0
+            font-weight: 100
+        p
+            margin-top: 7rem
+
+        .cta
+            display: block
+        &-1 h2
+            background-color: abstracts.$dark-blue-1
+
+        &-2 h2
+            background-color: abstracts.$dark-violet
+
+        &-3 h2
+            background-color: abstracts.$orange
+
+        &-4 h2
+            background-color: abstracts.$light-grey
+        &:hover > &__picture,&__picture
+            background-position: top !important
+            top: -15rem
+            border-radius: 0%
+            left: 0rem
+            height: 27rem
