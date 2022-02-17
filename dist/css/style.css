@@ -1,10 +1,10 @@
 /* 0 - 600px:      Phone
  * 600 - 900px:    Tablet portrait
- * 900 - 1024px:   Tablet landscape 
+ * 900 - 1024px:   Tablet landscape
  * [1200 - 1800] is where our normal styles apply
  * 1800px + :      Big desktop
  *
- *  $breakpoint arguement choices: 
+ *  $breakpoint arguement choices:
  *      - phone
  *      - tab-port
  *      - tab-land
@@ -83,6 +83,7 @@ h2, h3 {
   }
 }
 .nav {
+  display: flex;
   z-index: 40;
   background: #08293d;
   color: #fff;
@@ -93,8 +94,22 @@ h2, h3 {
   width: 100%;
   min-height: min-content;
 }
+.nav__toggle, .nav__button {
+  display: none;
+}
 .nav .logo {
+  flex-grow: 0.6;
   padding: 2rem;
+  z-index: 40;
+}
+@media only screen and (max-width: 56.25em) {
+  .nav .logo {
+    padding: 1rem;
+  }
+  .nav .logo svg {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
 }
 .nav__list {
   display: flex;
@@ -112,6 +127,151 @@ h2, h3 {
 }
 .nav__link:link:hover, .nav__link:visited:hover {
   color: #64c4bd;
+}
+@media only screen and (max-width: 66.25em) {
+  .nav__button {
+    display: block;
+    position: fixed;
+    top: 0rem;
+    right: 2rem;
+    height: 7rem;
+    width: 7rem;
+    z-index: 40;
+    box-shadow: 0 0.9rem 1rem rgba(255, 255, 255, 0.11);
+  }
+  .nav__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    transition: all 0.8s cubic-bezier(1, 0.47, 0, 1.27);
+    transition: all 0.2s ease-in-out;
+  }
+  .nav__icon::before, .nav__icon::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    transition: all 0.8s cubic-bezier(1, 0.47, 0, 1.27);
+  }
+  .nav__icon::before {
+    top: -8px;
+  }
+  .nav__icon::after {
+    top: 10px;
+    left: 0;
+    width: 20px;
+  }
+  .nav__list {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+    text-align: center;
+    background: #08293d;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.2s ease-out;
+  }
+  .nav__item {
+    font-size: 5rem;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .nav__item:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1vmin;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33.33%, white 33.33%, white 66.66%, rgba(255, 255, 255, 0) 66.66%, rgba(255, 255, 255, 0) 100%);
+    background-size: 400%;
+  }
+  .nav__toggle:checked ~ .nav__button .nav__icon {
+    transform: translate(-50%, -50%) rotate(-720deg);
+    background-color: transparent;
+  }
+  .nav__toggle:checked ~ .nav__button .nav__icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  .nav__toggle:checked ~ .nav__button .nav__icon::after {
+    transform: rotate(45deg);
+    top: 0;
+    left: 0;
+    width: 28px !important;
+  }
+  .nav__toggle:checked ~ .nav__list {
+    transform: translateX(0%);
+  }
+  .nav__toggle:checked ~ .nav__list .nav__item {
+    animation: item-fadeInUp 2s cubic-bezier(0.215, 0.61, 0.355, 1) backwards;
+  }
+  .nav__toggle:checked ~ .nav__list .nav__item:after {
+    animation: item-line 2s cubic-bezier(0.215, 0.61, 0.355, 1) backwards;
+  }
+}
+
+@keyframes item-fadeInUp {
+  from {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+@keyframes item-line {
+  from {
+    background-position-x: 100%;
+  }
+  to {
+    background-position-x: 0%;
+  }
+}
+.nav__item:nth-child(1) {
+  animation-delay: 0.0625s !important;
+}
+.nav__item:nth-child(1)::after {
+  animation-delay: 0s;
+}
+
+.nav__item:nth-child(2) {
+  animation-delay: 0.125s !important;
+}
+.nav__item:nth-child(2)::after {
+  animation-delay: 0s;
+}
+
+.nav__item:nth-child(3) {
+  animation-delay: 0.1875s !important;
+}
+.nav__item:nth-child(3)::after {
+  animation-delay: 0s;
+}
+
+.nav__item:nth-child(4) {
+  animation-delay: 0.25s !important;
+}
+.nav__item:nth-child(4)::after {
+  animation-delay: 0s;
+}
+
+.nav__item:nth-child(5) {
+  animation-delay: 0.3125s !important;
+}
+.nav__item:nth-child(5)::after {
+  animation-delay: 0s;
 }
 
 .header {
@@ -693,7 +853,6 @@ input::-webkit-input-placeholder {
 
 .logo {
   padding: 3rem;
-  flex-grow: 0.6;
 }
 .logo a {
   display: flex;

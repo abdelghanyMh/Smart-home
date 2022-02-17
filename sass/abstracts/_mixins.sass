@@ -1,3 +1,20 @@
+// hover style 4 links
+
+@mixin hoverd-link
+    text-decoration: underline
+    font-style: italic
+    font-weight: bold
+
+
+//position : absolute center
+@mixin absCenter()
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+
+
 // animations
 @mixin animat_fadeIn($direction,$coord-start, $coord-end)
     $animat_name: animate__fadeIn__+$direction
@@ -20,23 +37,18 @@
 
             opacity: 1
 
-// hover style 4 links 
 
-@mixin hoverd-link
-    text-decoration: underline
-    font-style: italic
-    font-weight: bold
 
 // 1020px
 // MEDIA QUERY MANAGER
 /*
  0 - 600px:      Phone
  600 - 900px:    Tablet portrait
- 900 - 1024px:   Tablet landscape 
+ 900 - 1024px:   Tablet landscape
  [1200 - 1800] is where our normal styles apply
  1800px + :      Big desktop
 
-    $breakpoint arguement choices: 
+    $breakpoint arguement choices:
         - phone
         - tab-port
         - tab-land

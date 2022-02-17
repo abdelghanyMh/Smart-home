@@ -1,5 +1,13 @@
 @use '../abstracts'
+$duration: 1s
+
+@mixin hamburger_common_style
+    width: 28px
+    height: 3px
+    background: abstracts.$white
+    transition: all 0.8s cubic-bezier(1, 0.47, 0, 1.27)
 .nav
+    display: flex
     z-index: abstracts.$zindex-navbar
     background: abstracts.$dark-blue-1
     color: abstracts.$white
@@ -8,18 +16,28 @@
     position: fixed
     top: 0
     left: 0
+
     width: 100%
     min-height: min-content
+    &__toggle,&__button
+        display: none
+
     .logo
+        flex-grow: .6
         padding: 2rem
-       
+        z-index: abstracts.$zindex-navbar__button
+        @include abstracts.respond(tab-port)
+            padding: 1rem
+            svg
+                width: 5rem !important
+                height: 5rem !important
+
     &__list
         display: flex
         align-items: center
         gap: 1.5rem
 
         list-style-type: none
-
         margin: 0
 
     &__item
@@ -30,3 +48,118 @@
         color: white
         &:hover
             color: rgba(100, 196, 189, 1)
+
+    @include abstracts.respond(tab-land)
+
+        &__button
+            display: block
+            position: fixed
+            top: 0rem
+            right: 2rem
+
+            height: 7rem
+            width: 7rem
+
+            z-index: abstracts.$zindex-navbar__button
+            box-shadow: 0 0.9rem 1rem rgb(abstracts.$white,.11)
+
+        &__icon
+            @include abstracts.absCenter()
+            @include hamburger_common_style
+            transition: all .2s ease-in-out
+
+            &::before,&::after
+                content: ''
+                position: absolute
+                @include hamburger_common_style
+
+            &::before
+                top: -8px
+            &::after
+                top: 10px
+                left: 0
+                width: 20px
+
+        &__list
+            flex-direction: column
+            justify-content: center
+            gap: 5rem
+
+            text-align: center
+            background: abstracts.$dark-blue-1
+
+            width: 100%
+            height: 100vh
+
+            position: absolute
+            left: 0
+
+            transform: translateX(-100%)
+            transition: all 0.2s ease-out
+
+        &__item
+            font-size: 5rem
+            font-weight: bold
+
+            position: relative
+            display: block
+            width: 100%
+
+            &:after
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 1vmin
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 33.33%, rgba(255,255,255,1) 33.33%, rgba(255,255,255,1) 66.66%, rgba(255,255,255,0) 66.66%, rgba(255,255,255,0) 100%)
+                background-size: 400%
+
+        &__toggle:checked ~ &__button
+
+            .nav__icon
+                transform: translate(-50%, -50%) rotate(-720deg)
+                background-color: transparent
+                &::before
+                    transform: rotate(-45deg)
+                    top: 0
+
+                &::after
+                    transform: rotate(45deg)
+                    top: 0
+                    left: 0
+                    width: 28px !important
+
+        &__toggle:checked ~ &__list
+            transform: translateX(0%)
+
+            .nav__item
+                animation: item-fadeInUp  $duration*2 cubic-bezier(0.215, 0.61, 0.355, 1) backwards
+
+                &:after
+                    animation: item-line $duration*2 cubic-bezier(0.215, 0.61, 0.355, 1) backwards
+
+
+@keyframes item-fadeInUp 
+    from
+        transform: translateY(2rem)
+        opacity: 0
+    to
+        transform: translateY(0rem)
+        opacity: 1
+
+// nav link line that appear under nav item link 
+@keyframes item-line
+    from
+        background-position-x: 100%
+
+    to
+        background-position-x: 0%
+
+// adding transition-delay to make suquential slide-in animation
+
+@for $i from 1 through 5
+    .nav__item:nth-child(#{$i})
+        animation-delay: calc($duration / 2)*$i * 0.125 !important
+        &::after
+            animation-delay: 0s
