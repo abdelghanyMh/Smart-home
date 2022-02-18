@@ -27,10 +27,14 @@ $duration: 1s
         padding: 2rem
         z-index: abstracts.$zindex-navbar__button
         @include abstracts.respond(tab-port)
-            padding: 1rem
+            padding: 1rem 2rem 2rem
             svg
                 width: 5rem !important
                 height: 5rem !important
+        @include abstracts.respond(phone)
+
+            span
+                display: none
 
     &__list
         display: flex
@@ -61,7 +65,7 @@ $duration: 1s
             width: 7rem
 
             z-index: abstracts.$zindex-navbar__button
-            box-shadow: 0 0.9rem 1rem rgb(abstracts.$white,.11)
+            box-shadow: 1px -6px 1rem 0px rgba(255, 255, 255, 0.11)
 
         &__icon
             @include abstracts.absCenter()
@@ -134,13 +138,12 @@ $duration: 1s
             transform: translateX(0%)
 
             .nav__item
-                animation: item-fadeInUp  $duration*2 cubic-bezier(0.215, 0.61, 0.355, 1) backwards
+                animation: item-fadeInUp $duration*2 cubic-bezier(0.215, 0.61, 0.355, 1) backwards
 
                 &:after
                     animation: item-line $duration*2 cubic-bezier(0.215, 0.61, 0.355, 1) backwards
 
-
-@keyframes item-fadeInUp 
+@keyframes item-fadeInUp
     from
         transform: translateY(2rem)
         opacity: 0
