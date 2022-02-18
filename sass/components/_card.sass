@@ -19,7 +19,7 @@
             padding: 0
             font-weight: 100
         p
-            margin-top: 7rem !important
+            margin-top: 7rem
 
         .cta
             display: block
@@ -46,6 +46,8 @@
 
         height: 30rem
         width: 35rem
+        @include  abstracts.respond(phone)
+            width: 100%
 
     &__picture-1
         background: url(../img/maintenance.jpg) center bottom / cover no-repeat
@@ -60,6 +62,11 @@
         border-radius: 0
         top: -9rem
 
+    @include  abstracts.respond(phone)
+        p
+            margin-top: 14rem
+            margin-bottom: 7rem
+
 .services
     // select All non-hoverd siblings 
     .grid-container:hover > *:not(:hover)
@@ -68,6 +75,9 @@
 
 .cta
     display: none
+    @include  abstracts.respond(phone)
+        width: 70%
+        justify-self: center
 
 @include abstracts.respond(tab-land)
     .card
