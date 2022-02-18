@@ -28,6 +28,17 @@
     @include abstracts.respond(tab-port)
         grid-template-columns: repeat(2, 1fr)
         row-gap: 2rem
+    @include abstracts.respond(phone)
+        padding-top: 10rem
+        grid-template-columns: 1fr !important
+        row-gap: 5rem !important
+        & > *
+            grid-column: 1 / -1 !important
+        &> :not(:first-child)
+
+            border-top: 1px solid #fff
+            padding-top: 4rem
+
 .social
     place-self: center
     .logo
