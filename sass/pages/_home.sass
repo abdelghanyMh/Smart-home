@@ -33,6 +33,7 @@ section:not(:first-child)
 
     @include abstracts.respond(tab-land)
         grid-template-columns: [full-start] 5rem repeat(2, [col-start] 1fr [col-end]) 5rem [full-end]
+
     @include abstracts.respond(tab-port)
         &__text,&__container
             grid-column: col-start 1/col-end 2
@@ -40,6 +41,8 @@ section:not(:first-child)
             text-align: center
             &-img
                 width: 70%
+                @include  abstracts.respond(phone)
+                    width: 100%
 
 .services
     h2
@@ -49,6 +52,10 @@ section:not(:first-child)
         grid-template-columns: repeat( auto-fit , minmax(20rem,1fr) )
         gap: 5rem
         margin: 0px 3rem
+        @include  abstracts.respond(phone)
+            grid-template-columns: 70%
+            justify-content: center
+            gap: 10rem
 
 .category
     .grid-container
@@ -60,6 +67,11 @@ section:not(:first-child)
         @include abstracts.respond(tab-port) // width < 900?
             margin: 0px 6vw
             grid-template-rows: repeat(3,minmax(22rem, 1fr) )
+
+        @include abstracts.respond(phone )
+            gap: 10vmin
+            grid-template-columns: 50%
+            justify-content: center
 
     &__item
         padding-top: 60%
@@ -91,6 +103,7 @@ section:not(:first-child)
 
     &__item-4
         @include item_image($bg-clr:'abstracts.$light-grey',$url:'../img/smart-plug.jpg')
+        background-position: bottom
 
     &__item-5
         @include item_image($bg-clr:'abstracts.$dark-violet',$url:'../img/smart-water-heater.jpg')
@@ -172,3 +185,8 @@ section:not(:first-child)
                 display: none
             &__container
                 justify-self: center
+
+        @include abstracts.respond(phone)
+            grid-row-gap: 10vmin
+            &-text
+                width: 80%
