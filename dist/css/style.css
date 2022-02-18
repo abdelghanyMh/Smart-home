@@ -201,6 +201,14 @@ h2, h3 {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33.33%, white 33.33%, white 66.66%, rgba(255, 255, 255, 0) 66.66%, rgba(255, 255, 255, 0) 100%);
     background-size: 400%;
   }
+  @supports not (display: grid) {
+    .nav__item:first-child {
+      margin-top: 1.25rem;
+    }
+    .nav__item:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
   .nav__toggle:checked ~ .nav__button .nav__icon {
     transform: translate(-50%, -50%) rotate(-720deg);
     background-color: transparent;
@@ -354,6 +362,11 @@ h2, h3 {
     border-top: 1px solid #fff;
     padding-top: 4rem;
   }
+  @supports not (display: grid) {
+    .footer > * {
+      margin-bottom: 5rem;
+    }
+  }
 }
 
 .social {
@@ -383,6 +396,12 @@ h2, h3 {
 .support__link:visited, .support__link:link {
   text-decoration: none;
   color: #fff;
+}
+@supports not (display: grid) {
+  .support__link:visited, .support__link:link {
+    margin: 2rem 1rem;
+    text-decoration: underline;
+  }
 }
 .support__link:visited:hover, .support__link:link:hover {
   text-decoration: underline;
@@ -429,6 +448,11 @@ h2, h3 {
 
   .newsletter {
     grid-column: 2/-1;
+  }
+  @supports not (display: grid) {
+    .newsletter > * {
+      margin-bottom: 5rem;
+    }
   }
   .newsletter form {
     width: 100%;
@@ -488,6 +512,14 @@ section:not(:first-child) {
     width: 100%;
   }
 }
+@supports not (display: grid) {
+  .about {
+    padding: 2rem;
+  }
+  .about__text {
+    margin-bottom: 5rem;
+  }
+}
 
 .services h2 {
   margin-top: 15rem;
@@ -540,6 +572,12 @@ section:not(:first-child) {
 }
 .category__item:hover .category__text > * {
   transform: skewX(16deg);
+}
+@supports not (display: grid) {
+  .category__item {
+    max-width: 80%;
+    margin: 0 auto 10rem;
+  }
 }
 .category__text {
   text-align: center;
@@ -623,6 +661,12 @@ section:not(:first-child) {
     row-gap: 10rem;
   }
 }
+@supports not (display: grid) {
+  .contact__infos > * {
+    margin: 0 auto 10rem;
+    max-width: 80%;
+  }
+}
 .contact img {
   width: 4rem;
   height: 5rem;
@@ -641,7 +685,6 @@ section:not(:first-child) {
 }
 @media only screen and (max-width: 56.25em) {
   .contact__info {
-    width: max-content;
     padding: 0rem;
   }
 }
@@ -698,6 +741,12 @@ section:not(:first-child) {
   }
   .contact__form-text {
     width: 80%;
+  }
+}
+@supports not (display: grid) {
+  .contact__form > * {
+    margin: 0 auto 10rem;
+    min-width: 80%;
   }
 }
 
@@ -808,6 +857,12 @@ section:not(:first-child) {
     margin-bottom: 7rem;
   }
 }
+@supports not (display: grid) {
+  .card {
+    max-width: 80%;
+    margin: 0 auto 10rem;
+  }
+}
 
 .services .grid-container:hover > *:not(:hover) {
   transform: scale(0.9);
@@ -823,6 +878,12 @@ section:not(:first-child) {
     justify-self: center;
   }
 }
+@supports not (display: grid) {
+  .cta {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
 
 @media only screen and (max-width: 66.25em) {
   .card h2 {
@@ -831,6 +892,11 @@ section:not(:first-child) {
     margin: 0;
     padding: 0;
     font-weight: 100;
+  }
+  @supports not (display: grid) {
+    .card h2 {
+      margin-top: 15rem !important;
+    }
   }
   .card p {
     margin-top: 7rem;
@@ -879,6 +945,7 @@ section:not(:first-child) {
   transform: translate(1rem, -8.5rem);
 }
 .form__label-textarea {
+  resize: both;
   -webkit-transform: translateX(1rem);
   transform: translateX(1rem);
 }

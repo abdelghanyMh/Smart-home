@@ -39,6 +39,10 @@
             border-top: 1px solid #fff
             padding-top: 4rem
 
+        @include  abstracts.support-grid()
+            & >  *
+                margin-bottom: 5rem
+
 .social
     place-self: center
     .logo
@@ -65,6 +69,9 @@
     &__link:visited,&__link:link
         text-decoration: none
         color: abstracts.$white
+        @include  abstracts.support-grid()
+            margin: 2rem 1rem
+            text-decoration: underline
         &:hover
             @include abstracts.hoverd-link
             color: abstracts.$light-pink
@@ -98,6 +105,9 @@
 
     .newsletter
         grid-column: 2 / -1
+        @include  abstracts.support-grid()
+            & >  *
+                margin-bottom: 5rem
         form
             width: 100%
 

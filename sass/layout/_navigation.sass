@@ -118,6 +118,11 @@ $duration: 1s
                 height: 1vmin
                 background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 33.33%, rgba(255,255,255,1) 33.33%, rgba(255,255,255,1) 66.66%, rgba(255,255,255,0) 66.66%, rgba(255,255,255,0) 100%)
                 background-size: 400%
+            @include  abstracts.support-grid()
+                &:first-child
+                    margin-top: 1.25rem
+                &:not(:last-child)
+                    margin-bottom: 1rem
 
         &__toggle:checked ~ &__button
 

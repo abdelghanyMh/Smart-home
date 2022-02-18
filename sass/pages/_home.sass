@@ -44,6 +44,11 @@ section:not(:first-child)
                 @include  abstracts.respond(phone)
                     width: 100%
 
+    @include  abstracts.support-grid()
+        padding: 2rem
+        &__text
+            margin-bottom: 5rem
+
 .services
     h2
         margin-top: 15rem
@@ -84,7 +89,9 @@ section:not(:first-child)
                 margin: 0 auto
                 & > *
                     transform: skewX(16deg)
-
+        @include  abstracts.support-grid()
+            max-width: 80%
+            margin: 0 auto 10rem
     &__text
         text-align: center
         background-color: abstracts.$white
@@ -125,9 +132,14 @@ section:not(:first-child)
         justify-content: center
         @include abstracts.respond(tab-land) // width < 900?
             grid-template-columns: repeat( auto-fit , minmax(25rem,1fr))
+
         @include abstracts.respond(tab-port) // width < 900?
             row-gap: 10rem
 
+        @include  abstracts.support-grid()
+            & > *
+                margin: 0 auto 10rem
+                max-width: 80%
     img
         width: 4rem
         height: 5rem
@@ -142,7 +154,6 @@ section:not(:first-child)
             flex-direction: column
 
         @include abstracts.respond(tab-port) // width < 1060px?
-            width: max-content
             padding: 0rem
 
         &-text
@@ -190,3 +201,8 @@ section:not(:first-child)
             grid-row-gap: 10vmin
             &-text
                 width: 80%
+
+        @include  abstracts.support-grid()
+            & > *
+                margin: 0 auto 10rem
+                min-width: 80%
