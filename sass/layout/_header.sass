@@ -1,7 +1,7 @@
 @use '../abstracts'
 
 .header
-    background: url("../img/headerimg.webp") top center / cover
+    background: url("../img/header-img.webp") top center / cover
     height: 80vh
     position: relative
     &__container
@@ -12,8 +12,11 @@
         transform: translate(-50%, -50%)
         color: white
         @include  abstracts.animat_fadeIn($direction:right,$coord-start:('x':-100%,'y':-50%),$coord-end: ('x':-50%,'y':-50%) )
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),(-webkit-min-device-pixel-ratio:2) and (min-width: 37.5em),(min-width: 125em)
+        background: url("../img/header-img-large.webp") top center / cover
+
     @include  abstracts.respond(phone)
-        background: linear-gradient(rgba(abstracts.$dark , .1),rgba(abstracts.$dark , .1)) ,url("../img/headerimg.webp") top center / cover
+        background: linear-gradient(rgba(abstracts.$dark , .1),rgba(abstracts.$dark , .1)) ,url("../img/header-img-small.webp") top center / cover
 
         &__container
             left: 50%
