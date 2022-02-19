@@ -23,7 +23,7 @@ html {
   scroll-behavior: smooth;
   box-sizing: border-box;
   text-transform: capitalize;
-  font-size: 62.5%;
+  font-size: 65.5%;
 }
 @media only screen and (max-width: 66.25em) {
   html {
@@ -288,7 +288,7 @@ h2, h3 {
 }
 
 .header {
-  background: url("../img/headerimg.webp") top center/cover;
+  background: url("../img/header-img.webp") top center/cover;
   height: 80vh;
   position: relative;
 }
@@ -311,9 +311,14 @@ h2, h3 {
     opacity: 1;
   }
 }
+@media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
+  .header {
+    background: url("../img/header-img-large.webp") top center/cover;
+  }
+}
 @media only screen and (max-width: 41.875em) {
   .header {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/headerimg.webp") top center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/header-img-small.webp") top center/cover;
   }
   .header__container {
     left: 50%;
@@ -618,10 +623,10 @@ section:not(:first-child) {
 }
 .category__item-5 {
   background-color: "abstracts.$dark-violet";
-  background: url("../img/smart-water-heater.jpg") top center/cover no-repeat;
+  background: url("../img/smart-water-heater.webp") top center/cover no-repeat;
 }
 .category__item-5:hover {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/smart-water-heater.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/smart-water-heater.webp");
 }
 .category__item-6 {
   background-color: " abstracts.$light-blue";
@@ -633,6 +638,7 @@ section:not(:first-child) {
 .category__item-7 {
   background-color: " abstracts.$dark-blue";
   background: url("../img/video-surveillance.jpg") top center/cover no-repeat;
+  background-position: left center;
 }
 .category__item-7:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/video-surveillance.jpg");
