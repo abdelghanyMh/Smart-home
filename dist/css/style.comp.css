@@ -73,7 +73,7 @@ h2, h3 {
 .nav {
   display: flex;
   z-index: 40;
-  background: #08293d;
+  background: transparent;
   color: #fff;
   font-family: "Changa", sans-serif;
   position: fixed;
@@ -81,6 +81,10 @@ h2, h3 {
   left: 0;
   width: 100%;
   min-height: min-content;
+  transition: background 250ms ease-in;
+}
+.nav-scrolled {
+  background: #08293d;
 }
 .nav__toggle, .nav__button {
   display: none;
@@ -459,8 +463,8 @@ h2, h3 {
     width: 45%;
   }
 }
-section:not(:first-child) {
-  padding: 10rem 0;
+section {
+  padding: 10rem 0 !important;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -496,8 +500,6 @@ section:not(:first-child) {
   }
 }
 .about {
-  padding-top: 5rem;
-  height: 85vh;
   display: grid;
   grid-template-columns: [full-start] 2rem repeat(2, [col-start] 1fr [col-end]) 2rem [full-end];
   justify-content: space-around;
@@ -560,9 +562,9 @@ section:not(:first-child) {
     }
   }
   .about.animate-in-view .about__container {
-    animation: a60__fadeIn__right 0.3s ease-out 0s forwards;
+    animation: a264__fadeIn__right 0.3s ease-out 0s forwards;
   }
-  @keyframes a60__fadeIn__right {
+  @keyframes a264__fadeIn__right {
     from {
       transform: translate(100%, 0%);
       opacity: 0;
@@ -589,9 +591,9 @@ section:not(:first-child) {
     }
   }
   .about.animate-out-view .about__container {
-    animation: a2__fadeOut__right 0.7s ease-in 0s forwards;
+    animation: a7__fadeOut__right 0.7s ease-in 0s forwards;
   }
-  @keyframes a2__fadeOut__right {
+  @keyframes a7__fadeOut__right {
     from {
       transform: translate(0%, 0%);
       opacity: 1;
@@ -904,48 +906,50 @@ section:not(:first-child) {
     min-width: 80%;
   }
 }
-.contact.animate-in-view .contact__infos {
-  opacity: 0;
-  animation: contacts-info__fadeIn__up 0.3s ease-out 0.3s forwards;
-}
-@keyframes contacts-info__fadeIn__up {
-  from {
-    transform: translate(0%, 10%);
+@media screen and (prefers-reduced-motion: no-preference) {
+  .contact.animate-in-view .contact__infos {
     opacity: 0;
+    animation: contacts-info__fadeIn__up 0.3s ease-out 0.3s forwards;
   }
-  to {
-    transform: translate(0%, 0%);
-    opacity: 1;
+  @keyframes contacts-info__fadeIn__up {
+    from {
+      transform: translate(0%, 10%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
   }
-}
-.contact.animate-in-view .contact__form {
-  opacity: 0;
-  animation: contacts-info__fadeIn__up 0.3s ease-out 0.5s forwards;
-}
-@keyframes contacts-info__fadeIn__up {
-  from {
-    transform: translate(0%, 10%);
+  .contact.animate-in-view .contact__form {
     opacity: 0;
+    animation: contacts-info__fadeIn__up 0.3s ease-out 0.5s forwards;
   }
-  to {
-    transform: translate(0%, 0%);
-    opacity: 1;
+  @keyframes contacts-info__fadeIn__up {
+    from {
+      transform: translate(0%, 10%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
   }
-}
-.contact.animate-out-view .contact__infos, .contact.animate-out-view .contact__form {
-  animation: contacts-info__fadeOut__down 0.7s ease-in 0s forwards;
-}
-@keyframes contacts-info__fadeOut__down {
-  from {
-    transform: translate(0%, 0%);
-    opacity: 1;
+  .contact.animate-out-view .contact__infos, .contact.animate-out-view .contact__form {
+    animation: contacts-info__fadeOut__down 0.7s ease-in 0s forwards;
   }
-  20% {
-    transform: translate(0%, 0%) scale(0.7);
-  }
-  to {
-    transform: translate(0%, 10%) scale(0);
-    opacity: 0;
+  @keyframes contacts-info__fadeOut__down {
+    from {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
+    20% {
+      transform: translate(0%, 0%) scale(0.7);
+    }
+    to {
+      transform: translate(0%, 10%) scale(0);
+      opacity: 0;
+    }
   }
 }
 

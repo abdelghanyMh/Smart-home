@@ -1,7 +1,7 @@
 @use '../abstracts'
 
 @mixin grid-animation()
-    // Applies styles when the user has made no preference known F
+    // Applies styles when the user has made no preference known
     @media screen and (prefers-reduced-motion: no-preference)
         &.animate-in-view
             .grid-container
@@ -21,7 +21,7 @@ section
     padding: 10rem 0 !important
 
 // animation for all section headers
-// Applies styles when the user has made no preference known F
+// Applies styles when the user has made no preference known
 @media screen and (prefers-reduced-motion: no-preference)
 
     .animate-in-view
@@ -69,7 +69,7 @@ section
         &__text
             margin-bottom: 5rem
 
-    // Applies styles when the user has made no preference known F
+    // Applies styles when the user has made no preference known
     @media screen and (prefers-reduced-motion: no-preference)
         &.animate-in-view
             .about__text
@@ -249,14 +249,16 @@ section
                 margin: 0 auto 10rem
                 min-width: 80%
 
-    &.animate-in-view
-        .contact__infos
-            opacity: 0
-            @include  abstracts.animat_fadeIn($target:contacts-info,$direction:up,$coord-start:('x':0%,'y':10%),$coord-end: ('x':0%,'y':0%),$delay:.3s)
-        .contact__form
-            opacity: 0
-            @include  abstracts.animat_fadeIn($target:contacts-info,$direction:up,$coord-start:('x':0%,'y':10%),$coord-end: ('x':0%,'y':0%),$delay:.5s)
+    // Applies styles when the user has made no preference known
+    @media screen and (prefers-reduced-motion: no-preference)
+        &.animate-in-view
+            .contact__infos
+                opacity: 0
+                @include  abstracts.animat_fadeIn($target:contacts-info,$direction:up,$coord-start:('x':0%,'y':10%),$coord-end: ('x':0%,'y':0%),$delay:.3s)
+            .contact__form
+                opacity: 0
+                @include  abstracts.animat_fadeIn($target:contacts-info,$direction:up,$coord-start:('x':0%,'y':10%),$coord-end: ('x':0%,'y':0%),$delay:.5s)
 
-    &.animate-out-view
-        .contact__infos,.contact__form
-            @include  abstracts.animat_fadeOut($target:contacts-info,$direction:down,$coord-start:('x':0%,'y':0%),$coord-end: ('x':0%,'y':10%))
+        &.animate-out-view
+            .contact__infos,.contact__form
+                @include  abstracts.animat_fadeOut($target:contacts-info,$direction:down,$coord-start:('x':0%,'y':0%),$coord-end: ('x':0%,'y':10%))
