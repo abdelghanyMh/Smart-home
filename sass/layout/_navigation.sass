@@ -9,7 +9,7 @@ $duration: 1s
 .nav
     display: flex
     z-index: abstracts.$zindex-navbar
-    background: abstracts.$dark-blue-1
+    background: transparent
     color: abstracts.$white
     font-family: abstracts.$font-primary
 
@@ -19,6 +19,9 @@ $duration: 1s
 
     width: 100%
     min-height: min-content
+    transition: background 250ms ease-in
+    &-scrolled
+        background: abstracts.$dark-blue-1
     &__toggle,&__button
         display: none
 

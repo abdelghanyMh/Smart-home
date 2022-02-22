@@ -17,8 +17,8 @@
     &:hover
         background-image: linear-gradient(rgba(abstracts.$dark,.3),rgba(abstracts.$dark,.3)) , url($url)
 
-section:not(:first-child)
-    padding: 10rem 0
+section
+    padding: 10rem 0 !important
 
 // animation for all section headers
 // Applies styles when the user has made no preference known F
@@ -32,8 +32,8 @@ section:not(:first-child)
             @include  abstracts.animat_fadeOut($target:services-card,$direction:down,$coord-start:('x':0%,'y':0%),$coord-end: ('x':0%,'y':10%))
 
 .about
-    padding-top: 5rem
-    height: 85vh
+    // padding-top: 5rem
+    // height: 85vh
 
     display: grid
     grid-template-columns: [full-start] 2rem repeat(2,[col-start] 1fr [col-end]) 2rem [full-end]
