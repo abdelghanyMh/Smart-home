@@ -1,7 +1,15 @@
 @use '../abstracts'
-%flex
-    display: flex
-    flex-wrap: wrap
+
+@mixin grid-animation()
+    // Applies styles when the user has made no preference known F
+    @media screen and (prefers-reduced-motion: no-preference)
+        &.animate-in-view
+            .grid-container
+                opacity: 0
+                @include  abstracts.animat_fadeIn($target:grid-container,$direction:up,$coord-start:('x':0%,'y':10%),$coord-end: ('x':0%,'y':0%),$delay:.2s)
+        &.animate-out-view
+            .grid-container
+                @include  abstracts.animat_fadeOut($target:grid-container,$direction:down,$coord-start:('x':0%,'y':0%),$coord-end: ('x':0%,'y':10%))
 
 @mixin item_image($bg-clr:'abstracts.$dark-blue',$url:"")
     background-color: $bg-clr
@@ -10,10 +18,21 @@
         background-image: linear-gradient(rgba(abstracts.$dark,.3),rgba(abstracts.$dark,.3)) , url($url)
 
 section:not(:first-child)
-    padding-top: 10rem
+    padding: 10rem 0
+
+// animation for all section headers
+// Applies styles when the user has made no preference known F
+@media screen and (prefers-reduced-motion: no-preference)
+
+    .animate-in-view
+        .section-header
+            @include  abstracts.animat_fadeIn($target:services-card,$direction:up,$coord-start:('x':0%,'y':10%),$coord-end: ('x':0%,'y':0%))
+    .animate-out-view
+        .section-header
+            @include  abstracts.animat_fadeOut($target:services-card,$direction:down,$coord-start:('x':0%,'y':0%),$coord-end: ('x':0%,'y':10%))
 
 .about
-    margin-top: 5rem
+    padding-top: 5rem
     height: 85vh
 
     display: grid
@@ -23,6 +42,7 @@ section:not(:first-child)
     gap: 1rem
     &__text
         grid-column: col-start 1 / col-end 1
+
     &__container
         grid-column: col-start 2 / col-end 2
         &-img
@@ -49,18 +69,36 @@ section:not(:first-child)
         &__text
             margin-bottom: 5rem
 
+    // Applies styles when the user has made no preference known F
+    @media screen and (prefers-reduced-motion: no-preference)
+        &.animate-in-view
+            .about__text
+                @include  abstracts.animat_fadeIn($target:about-text,$direction:left,$coord-start:('x':-100%,'y':0%),$coord-end: ('x':0%,'y':0%))
+            .about__container
+                @include  abstracts.animat_fadeIn($direction:right,$coord-start:('x':100%,'y':0%),$coord-end: ('x':0%,'y':0%) )
+
+        &.animate-out-view
+            .about__text
+                @include  abstracts.animat_fadeOut($target:about-text,$direction:left,$coord-start:('x':0%,'y':0%),$coord-end: ('x':-100%,'y':0%) )
+            .about__container
+                @include  abstracts.animat_fadeOut($direction:right,$coord-start:('x':0%,'y':0%),$coord-end: ('x':100%,'y':0%) )
+
 .services
+    background-color: abstracts.$light-grey-2
     h2
-        margin-top: 15rem
+        margin-top: 10rem
     .grid-container
         display: grid
         grid-template-columns: repeat( auto-fit , minmax(20rem,1fr) )
         gap: 5rem
         margin: 0px 3rem
+
         @include  abstracts.respond(phone)
             grid-template-columns: 70%
             justify-content: center
             gap: 10rem
+
+    @include grid-animation
 
 .category
     .grid-container
@@ -125,7 +163,11 @@ section:not(:first-child)
     &__item-8
         @include item_image($bg-clr:'abstracts.$light-grey',$url:'../img/smart-lock.jpg')
 
+    @include grid-animation
+
 .contact
+    background-color: abstracts.$light-grey-2
+
     &__infos
         display: grid
         grid-template-columns: repeat( auto-fit , minmax(24rem,max-content))
@@ -171,7 +213,6 @@ section:not(:first-child)
                 font-family: abstracts.$font-primary
 
     &__form
-        padding-bottom: 3rem
         display: grid
         grid-template-columns: 1fr 1fr
         &::before
@@ -207,3 +248,15 @@ section:not(:first-child)
             & > *
                 margin: 0 auto 10rem
                 min-width: 80%
+
+    &.animate-in-view
+        .contact__infos
+            opacity: 0
+            @include  abstracts.animat_fadeIn($target:contacts-info,$direction:up,$coord-start:('x':0%,'y':10%),$coord-end: ('x':0%,'y':0%),$delay:.3s)
+        .contact__form
+            opacity: 0
+            @include  abstracts.animat_fadeIn($target:contacts-info,$direction:up,$coord-start:('x':0%,'y':10%),$coord-end: ('x':0%,'y':0%),$delay:.5s)
+
+    &.animate-out-view
+        .contact__infos,.contact__form
+            @include  abstracts.animat_fadeOut($target:contacts-info,$direction:down,$coord-start:('x':0%,'y':0%),$coord-end: ('x':0%,'y':10%))

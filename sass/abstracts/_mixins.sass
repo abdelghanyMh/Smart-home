@@ -13,17 +13,12 @@
     transform: translate(-50%, -50%)
 
 // animations
-@mixin animat_fadeIn($direction,$coord-start, $coord-end)
-    $animat_name: animate__fadeIn__+$direction
-    $axis: 0
 
-    animation: $animat_name .7s ease-in .1s
+// fade in 
+@mixin animat_fadeIn($target:a+random(500),$direction,$coord-start, $coord-end,$ease:ease-out,$fill-mode:forwards,$delay:0s)
+    $animat_name: $target+__fadeIn__+$direction
 
-    @if $direction == 'left' or $direction == 'right'
-        $axis: 'X'
-
-    @else if $direction =='up'
-        $axis: 'Y'
+    animation: $animat_name .3s $ease  $delay forwards
 
     @keyframes  #{$animat_name}
         from
@@ -31,23 +26,39 @@
             opacity: 0
         to
             transform: translate(map-get($coord-end, "x"),map-get($coord-end,"y"))
-
             opacity: 1
 
-// MEDIA QUERY MANAGER
-/*
- 0 -  670px:      Phone
- 670px - 900px:    Tablet portrait
- 900 - 1024px:   Tablet landscape
- [1200 - 1800] is where our normal styles apply
- 1800px + :      Big desktop
+//fadeOut
+@mixin animat_fadeOut($target:a+random(10),$direction,$coord-start, $coord-end,$ease:ease-in,$fill-mode:forwards,$delay:0s)
+    $animat_name: $target+__fadeOut__+$direction
 
-    $breakpoint arguement choices:
-        - phone
-        - tab-port
-        - tab-land
-        - big-desktop
-        1em = 16px
+    animation: $animat_name .7s $ease $delay  $fill-mode
+
+    @keyframes  #{$animat_name}
+        from
+            transform: translate(map-get($coord-start, "x"),map-get($coord-start, "y"))
+            opacity: 1
+        20%
+            transform: translate(map-get($coord-start, "x"),map-get($coord-start, "y")) scale(.7)
+
+        to
+            transform: translate(map-get($coord-end, "x"),map-get($coord-end,"y")) scale(0)
+            opacity: 0
+
+// MEDIA QUERY MANAGER
+
+//  0 -  670px:      Phone
+//  670px - 900px:    Tablet portrait
+//  900 - 1024px:   Tablet landscape
+//  [1200 - 1800] is where our normal styles apply
+//  1800px + :      Big desktop
+
+//     $breakpoint arguement choices:
+//         - phone
+//         - tab-port
+//         - tab-land
+//         - big-desktop
+//         1em = 16px
 
 @mixin respond($breakpoint)
     @if $breakpoint == phone
@@ -67,5 +78,3 @@
 @mixin support-grid()
     @supports not (display:grid)
         @content
-
-
