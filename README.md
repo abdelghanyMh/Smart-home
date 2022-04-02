@@ -12,9 +12,12 @@ In smart-home, you will find information about a fictional company called smarth
 
 ## 🚀 Usage
  > Clone the Repository  
-	> git clone 
-	> cd 
-	>npm  run start 
+ > 
+ >  git clone
+ >  
+ >  cd Smart-home
+ >  
+ >  npm  run start 
 	
 
 
