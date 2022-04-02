@@ -7,7 +7,7 @@ In smart-home, you will find information about a fictional company called smarth
 
 ## ✨ Demo
 
-![Mobile Layout](./smart_home_mobile)
+![Mobile Layout](./smart_home_mobile.gif)
 ![desktop Layout](./smart_home_desk.gif)
 
 ## 🚀 Usage
